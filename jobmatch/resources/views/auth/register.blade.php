@@ -11,6 +11,15 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Are you:</label>
+
+                            <div class="col_md-6">
+                                <input type="radio" name=" " value="Employer"> Employer <br>
+                                <input type="radio" name=" " value="Job Seeker"> Job Seeker
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">  <!-- Use Name variable, not yet create variable in database and connect to it -->
                             <label for="name" class="col-md-4 control-label">Username</label>
 
