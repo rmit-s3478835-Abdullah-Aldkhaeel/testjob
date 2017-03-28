@@ -12,6 +12,21 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">  <!-- Use Name variable, not yet create variable in database and connect to it -->
+                            <label for="name" class="col-md-4 control-label">Are you:</label>
+                            <div class="col-md-6">
+                            <select name="type" class="form-control">
+                                <option value="employer">Employer</option>
+                                <option value="job seeker">Job Seeker</option>
+                            </select>
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">  <!-- Use Name variable, not yet create variable in database and connect to it -->
                             <label for="name" class="col-md-4 control-label">Username</label>
 
                             <div class="col-md-6">
@@ -83,7 +98,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     <i class="fa fa-btn fa-user"></i> Sign Up
                                 </button>
                             </div>
