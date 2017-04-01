@@ -24,6 +24,11 @@
         .fa-btn {
             margin-right: 6px;
         }
+        .panel-bodyLanding
+        {
+            background-color: grey;
+            color:white;
+        }
         .panel-body
         {
             background-color: DarkSlateBlue;
