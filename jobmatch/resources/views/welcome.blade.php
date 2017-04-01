@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Welcome</div>
 
-                <div class="panel-body">
+                <div class="panel-bodyLanding">
                     Your Application's Landing Page.
                 </div>
             </div>
