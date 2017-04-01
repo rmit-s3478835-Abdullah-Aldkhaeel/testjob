@@ -12,27 +12,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
-    <link rel="stylesheet" type = "text/css" href = "css.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
         body {
             font-family: 'Lato';
-            background-color: grey;
         }
 
         .fa-btn {
             margin-right: 6px;
-        }
-        .panel-bodyLanding
-        {
-            background-color: grey;
-            color:white;
-        }
-        .panel-body
-        {
-            background-color: DarkSlateBlue;
-            color:white;
         }
     </style>
 </head>
@@ -49,12 +38,20 @@
                     <span class="icon-bar"></span>
                 </button>
 
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    Laravel
+                </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav nav-tabs nav-justified">
+                <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
@@ -70,6 +67,7 @@
                             </ul>
                         </li>
                     @endif
+                </ul>
             </div>
         </div>
     </nav>

@@ -2,8 +2,6 @@
 
 namespace App;
 
-
-
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -14,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'category_id', 'photo_id', 'is_active', '',
     ];
 
     /**
@@ -26,8 +24,14 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function jobs(){
-        return $this->hasMany(Job::class);
+    public function category(){
+
+        return $this->belongsTo('App\Category');
     }
 
+    public function photo(){
+
+        return $this->belongsTo('App\Photo');
+
+    }
 }
