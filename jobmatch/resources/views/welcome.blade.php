@@ -12,14 +12,11 @@
 
                 <div class="panel-heading"</div>
 
-<<<<<<< HEAD
-                <div class="panel-body">
-                    Your Application's Landing Page.
-=======
+
                 <div class="panel-bodyLanding">
                     <a href="{{ url('/login') }}" class="button">Sign In</a><br>
                     <a href="{{ url('/register') }}" class="button">Sign Up</a>
->>>>>>> refs/remotes/origin/master
+
                 </div>
             </div>
         </div>
