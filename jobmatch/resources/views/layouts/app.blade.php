@@ -23,6 +23,18 @@
         .fa-btn {
             margin-right: 6px;
         }
+        footer {
+            padding: 0.5em;
+            color: black;
+            background-color: rgb(225, 225, 225);
+            clear: left;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            right: 0;
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -73,7 +85,7 @@
     </nav>
 
     @yield('content')
-
+    <footer>Copyright 2017 &copy; Job Seeking</footer>
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
