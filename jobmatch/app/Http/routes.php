@@ -25,3 +25,11 @@ Route::get('/admin', function(){
 });
 
 Route::resource('admin/users', 'AdminUsersController');
+
+/*Route::get('/');*/
+Route::get('/search','afterSignIn@search');
+Route::get('/myAccount','afterSignIn@myAccount');
+Route::get('/contact','afterSignIn@contact');
+Route::get('/logOut','logOut@logOut');
+Route::post('search','afterSignIn@searchResult');
+Route::post('editProfile','afterSignIn@EditProfile');
