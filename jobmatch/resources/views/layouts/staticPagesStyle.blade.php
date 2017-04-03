@@ -30,25 +30,27 @@
 
         }
 
-        .panel-bodyLanding
-        {
-            background-color: #f5f5f5;
-            color:white;
 
+        .box{
+            left:35%;
+            width:30%;
+            height:30%;
+            top:35%;
+            background: rgba(90, 141, 184, 0.69);
+            position:absolute;
+            text-align:center;
         }
+        .box p {
 
-        .button {
-            background-color: #5C97BF;
-            border: none;
-            color: white;
-            padding: 15px 40px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            width: 100%;
+            color: #ffffff;
+            font-size: 2vmin;
+            font-family: "Courier New", Courier, monospace;
+        }
+        .box h3 {
+
+            color: #3a5c75;
+            font-family: "Arial Black", Gadget, sans-serif;
+
         }
         footer {
             padding: 0.5em;
@@ -84,7 +86,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav nav-tabs nav-justified">
                     <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/about') }}">About</a></li>
+                    <li><a href="{{ url('/home') }}">About</a></li>
                     <li><a href="{{ url('/home') }}">Contact Us</a></li>
                     <!-- Authentication Links -->
                     @if (Auth::guest())
