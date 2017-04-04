@@ -28,31 +28,43 @@ class TestLandingPage extends TestCase
     {
         $this->visit('/')
             ->click('Sign In')
+            ->seePageIs('/login')
             ->see('Login');
     }
     //Test Sign up button of Landing Page
     public function testSignup()
     {
         $this->visit('/')
-            ->click('Sign In')
+            ->click('Sign Up')
+            ->seePageIs('/register')
             ->see('Register');
     }
     public function testHomebutton()
     {
         $this->visit('/')
             ->click('Home')
+            ->seePageIs('/login')
             ->see('Login');
+    }
+    public function testAboutbutton()
+    {
+        $this->visit('/')
+            ->click('About')
+            ->seePageIs('/about')
+            ->see('About');
     }
     public function testLogininNavigation()
     {
         $this->visit('/')
             ->click('Login')
+            ->seePageIs('/login')
             ->see('Login');
     }
     public function testRegisinNavigation()
     {
         $this->visit('/')
             ->click('Register')
+            ->seePageIs('register')
             ->see('Register');
     }
 }

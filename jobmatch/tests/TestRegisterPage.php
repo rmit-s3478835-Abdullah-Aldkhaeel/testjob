@@ -106,4 +106,5 @@ class TestRegisterPage extends TestCase
         $user = DB::table('users')->where('name', 'Huy');
         $user->delete();
     }
+
 }
