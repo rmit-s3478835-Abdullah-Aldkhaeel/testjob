@@ -36,3 +36,4 @@ Route::get('/contact','afterSignIn@contact');
 Route::get('/logOut','logOut@logOut');
 Route::post('search','afterSignIn@searchResult');
 Route::post('editProfile','afterSignIn@EditProfile');
+Route::get('/resume','afterSignIn@Resume');

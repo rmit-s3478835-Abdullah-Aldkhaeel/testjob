@@ -1,55 +1,50 @@
-<html>
-<head>
-    <title>afterSignIn</title>
-    <link rel="stylesheet" href="{{ URL::asset('css/MyAccountCss.css') }}">
-<body>
-@include('layouts.templateHead')
+@extends('layouts.beforeContentPage')
+@section('content')
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-md-push-4" id="layoutAndColor">
+                <p style=" color: white">Please edit your personal information:</p>
+                <form action="editProfile" method="post">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                        <div class="input-group">
+                            <span class="input-group-addon" style="color:black">username</span>
+                            <input type="text"  class="form-control" name="username"/>
+                        </div>
 
-<div class="div3">
-My Account
-</div>
-<div class="div4">
-    <p>Edit Profile</p>
-</div>
-<div class="divHr"></div>
-<div class="divForm">
-    <div class="desc">Job description you've posted:<span>{{--extract the data from database--}}</span></div>
-    <form action="editProfile" method="post">
-        <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-            <table>
-                <tr>
-                    <td>userName:</td>
-                    <td><input type="text" name="username" value="{{--database--}}"/></td>
-                </tr>
-                <tr>
-                    <td>passWord:</td>
-                    <td><input type="text" name="passWord" value="{{--database--}}"/></td>
-                </tr>
-                <tr>
-                    <td>eMail:</td>
-                    <td><input type="text" name="eMail" value="{{--database--}}"/></td>
-                </tr>
-                <tr>
-                    <td>personalDescription:</td>
-                    <td><textarea name="pdescription" rows="3" cols="19" value="{{--database--}}"></textarea></td>
-                </tr>
-                <tr>
-                    <td>jobDescription:</td>
-                    <td><textarea name="jdescription" rows="3" cols="19" value="{{--database--}}"></textarea></td>
-                </tr>
-                <tr>
-                    <td>submit</td>
-                    <td><input type="submit" name="submit" value="edit"/></td>
-                </tr>
-            </table>
-    </form>
-</div>
-<div class="divHr"></div>
-<div class="desc">
-    Number of the resumes you have received:<span>{{--database--}}</span></br>
-    <input type="button" onclick="resume()" name="resume" value="view resume" />
-</div>
-@include('layouts.templateBottom')
-</body>
-<head/>
-</html>
+                    <div class="input-group" id="layoutAndColor">
+                        <span class="input-group-addon" style="color:black">password</span>
+                        <input type="text"  class="form-control" name="pwd"/>
+                    </div>
+
+                    <div class="input-group" id="layoutAndColor">
+                        <span class="input-group-addon" style="color:black">reset</span>
+                        <input type="text"  class="form-control" name="reset"/>
+                    </div>
+
+                    <div class="input-group" id="layoutAndColor">
+                        <span class="input-group-addon" style="color:black">email</span>
+                        <input type="text"  class="form-control" name="email"/>
+                    </div>
+
+                    <div class="input-group" id="layoutAndColor">
+                        <span class="input-group-addon" style="color:black">personalDescription</span>
+                        <textarea rows="3" cols="5" class="form-control" name="personalDescription"></textarea>
+                    </div>
+                    <button  type="submit" class="btn btn-primary form-control" style="margin-top: 20px;height: 40px">
+                        <p style="font-size: 20px">
+                        edit
+                        </p>
+                    </button>
+                </form>
+                <p style="margin-top: 20px;color: white">
+                    please enter the button if you want to check your resume:
+                </p>
+                <a href="{{URL::to('/resume')}}" class="btn btn-danger form-control" style="height: 40px">
+                    <p style="font-size: 20px">
+                    view resume
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+@endsection

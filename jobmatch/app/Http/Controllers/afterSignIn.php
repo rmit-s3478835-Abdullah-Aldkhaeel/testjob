@@ -36,4 +36,10 @@ class afterSignIn extends Controller
         return 'EditProfile';
     }
 
+    public function Resume(){
+
+        return 'resume';
+
+    }
+
 }
