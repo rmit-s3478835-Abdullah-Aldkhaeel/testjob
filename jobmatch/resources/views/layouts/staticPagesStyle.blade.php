@@ -34,7 +34,7 @@
         .box{
             left:35%;
             width:30%;
-            height:30%;
+            height:43%;
             top:35%;
             background: rgba(90, 141, 184, 0.69);
             position:absolute;
