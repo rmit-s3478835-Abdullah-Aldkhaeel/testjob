@@ -5,7 +5,7 @@
     <div class="row">
         <br>
 
-        <h1><div style="text-align: center; color:rgba(0,0,0,0.82); " >teste</div></h1>
+        <h1><div style="text-align: center; color:rgba(0,0,0,0.82); " >Welcome</div></h1>
 
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
