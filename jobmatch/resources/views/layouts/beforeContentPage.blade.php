@@ -18,7 +18,7 @@
     <style>
 
         body{
-            background: url("./job1.jpg");
+            background: url("./background2.jpg");
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -30,7 +30,12 @@
             color: black;
             margin-top: 20px;
         }
+        #layoutAndColor h3{
 
+            color: #3a5c75;
+            font-family: "Arial Black", Gadget, sans-serif;
+            text-align: center;
+        }
         a:hover{
             background-color: black;
         }
@@ -47,54 +52,61 @@
 
         }
 
-        .button {
-            background-color: #5C97BF;
-            border: none;
-            color: white;
-            padding: 15px 40px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            width: 100%;
-        }
         footer {
-            padding: 0.5em;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 1rem;
             color: black;
             background-color: rgba(245, 245, 245, 0.6);
-            clear: left;
+
             text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            left: 0;
-            right: 0;
+
         }
     </style>
     </head>
-    <body>
-    <nav class="navbar navbar-inverse  navbar-static-top">
+<body id="app-layout">
+<nav class="navbar navbar-default navbar-static-top">
+    <h3><div style="text-align: center; color:rgba(0,0,0,0.82); font-family:courier;" >Job Seeking</div></h3>
+    <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target=".navbar-responsive-collapse">
-                {{--<span class="sr-only">Toggle-navigation</span>--}}
+
+            <!-- Collapsed Hamburger -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="{{URL('/')}}" class="navbar-brand">Home</a>
+
         </div>
-        <div class="collapse navbar-collapse navbar-responsive-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="{{URL('/search')}}">searchJob</a></li>
-                <li><a href="{{URL('/myAccount')}}">MyAccount</a></li>
-                <li><a href="{{URL('/contact')}}">ContactUs</a></li>
-                <li><a href="{{URL::to('/logOut')}}">logout</a></li>
-            </ul>
+
+        <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <!-- Left Side Of Navbar -->
+            <ul class="nav nav-tabs nav-justified">
+                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{ url('/search') }}">Job Search</a></li>
+                <li><a href="{{ url('/about') }}">About</a></li>
+                <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                <!-- Authentication Links -->
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/register') }}">Register</a></li>
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                        </ul>
+                    </li>
+            @endif
         </div>
-    </nav>
+    </div>
+</nav>
     @yield('content')
     <footer>Copyright 2017 &copy; Job Seeking</footer>
     <!-- JavaScripts -->
