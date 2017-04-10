@@ -17,7 +17,7 @@
 
     <style>
         body {
-            background: url("./background.jpg");
+            background: url("./background2.jpg");
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
