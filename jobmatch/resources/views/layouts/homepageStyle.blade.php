@@ -50,6 +50,9 @@
             cursor: pointer;
             width: 100%;
         }
+        .button:hover {
+            background-color: #49bf70;
+        }
         footer {
             padding: 0.5em;
             color: black;
@@ -83,7 +86,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav nav-tabs nav-justified">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ url('/about') }}">About</a></li>
                     <li><a href="{{ url('/contact') }}">Contact Us</a></li>
                     <!-- Authentication Links -->
