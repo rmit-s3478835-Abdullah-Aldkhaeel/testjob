@@ -18,7 +18,7 @@
     <style>
 
         body{
-            background: url("./job1.jpg");
+            background: url("./background2.jpg");
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -26,28 +26,44 @@
             background-color: grey;
         }
 
-        #layoutAndColor{
-            color: black;
-            margin-top: 20px;
-        }
-
-        a:hover{
-            background-color: black;
-        }
-
         .fa-btn {
             margin-right: 6px;
+        }
+        .box{
+            left:35%;
+            width:30%;
+            height:43%;
+            top:35%;
+            background: rgba(255, 255, 255, 0.45);
+            position:absolute;
+            text-align:center;
+        }
+        .box p {
+
+            color: #ffffff;
+            font-size: 2vmin;
+            font-family: "Courier New", Courier, monospace;
+        }
+        .box h3 {
+
+            color: #3a5c75;
+            font-family: "Arial Black", Gadget, sans-serif;
 
         }
-
-        .panel-bodyLanding
-        {
-            background-color: #f5f5f5;
-            color:white;
-
+        .form-control  {
+            background-color: #ffffff;
+            border: none;
+            color: #606060;
+            padding: 15px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin:auto;
+            cursor: pointer;
+            width: 60%;
         }
-
-        .button {
+        .btn-btn-danger  {
             background-color: #5C97BF;
             border: none;
             color: white;
@@ -56,9 +72,12 @@
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-            margin: 4px 2px;
+            margin:auto;
             cursor: pointer;
-            width: 100%;
+            width: 60%;
+        }
+        .btn-btn-danger:hover {
+            background-color: #49bf70;
         }
         footer {
             padding: 0.5em;
@@ -74,39 +93,46 @@
         }
     </style>
     </head>
-    <body>
-    <nav class="navbar navbar-inverse  navbar-static-top">
+<body id="app-layout">
+<nav class="navbar navbar-default navbar-static-top">
+    <h3><div style="text-align: center; color:rgba(0,0,0,0.82); font-family:courier;" >Job Seeking</div></h3>
+    <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target=".navbar-responsive-collapse">
-                {{--<span class="sr-only">Toggle-navigation</span>--}}
+
+            <!-- Collapsed Hamburger -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="{{URL('/')}}" class="navbar-brand">Home</a>
+
         </div>
-        <div class="collapse navbar-collapse navbar-responsive-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="{{URL('/search')}}">searchJob</a></li>
-                <li><a href="{{URL('/myAccount')}}">MyAccount</a></li>
-                <li><a href="{{URL('/contact')}}">ContactUs</a></li>
-                <li><a href="{{URL::to('/logOut')}}">logout</a></li>
-            </ul>
-            <form  class="navbar-form navbar-right" action="search" method="post" style="margin-right: 20px">
-                <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                <div class="form-group">
-                    <select name="job" class="form-control" style="width: 200px">
-                        <option  value="computing">computing</option>
-                        <option  value="art">art</option>
-                        <option  value="sales">sales</option>
-                        <option  value="real estate">real estate</option>
-                    </select>
-                    <button type="submit" class="btn btn-danger" style="width: 120px">search</button>
-                </div>
-            </form>
+
+        <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <!-- Left Side Of Navbar -->
+            <ul class="nav nav-tabs nav-justified">
+                <li><a href="{{ url('/home') }}">Home</a></li>
+                <li><a href="{{ url('/about') }}">About</a></li>
+                <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                <!-- Authentication Links -->
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/register') }}">Register</a></li>
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                        </ul>
+                    </li>
+            @endif
         </div>
-    </nav>
+    </div>
+</nav>
     @yield('content')
     <footer>Copyright 2017 &copy; Job Seeking</footer>
     <!-- JavaScripts -->
