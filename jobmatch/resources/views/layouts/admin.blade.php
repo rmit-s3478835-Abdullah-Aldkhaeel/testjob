@@ -138,16 +138,21 @@
                         <a href="#"><i class="glyphicon glyphicon-hand-right"></i> Jobs<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/posts">All Jobs</a>
+                                <a href="{{route('admin.jobs.index')}}">All Jobs</a>
                             </li>
 
                             <li>
-                                <a href="/posts/create">Create Job</a>
+                                <a href="{{route('admin.jobs.create')}}">Create Job</a>
                             </li>
+
+                            {{--<li>--}}
+                                {{--<a href="{{route('admin.comments.index')}}">All Comments</a>--}}
+                            {{--</li>--}}
 
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
+
 
 
                     {{--<li>--}}

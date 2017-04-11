@@ -28,6 +28,7 @@ Route::get('/admin', function(){
 });
 
 Route::resource('admin/users', 'AdminUsersController');
+Route::resource('admin/jobs', 'AdminJobsController');
 
 /*Route::get('/');*/
 Route::get('/search','afterSignIn@search');
