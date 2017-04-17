@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Category;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -50,6 +51,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
+            'category_id'=>  'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
@@ -65,8 +67,12 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'category_id'=> $data['category_id'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }
+
+
+
 }

@@ -24,6 +24,17 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }}">
+                               <label for="category_id" class="col-md-4 control-label">Category</label>
+                            <select name='category_id'>
+                                <option value=2>employer</option>
+                                <option value=3>jobseeker</option>
+
+                            </select>
+
+                        </div>
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
@@ -79,4 +90,6 @@
         </div>
     </div>
 </div>
+
+
 @endsection

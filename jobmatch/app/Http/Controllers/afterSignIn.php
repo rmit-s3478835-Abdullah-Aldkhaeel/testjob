@@ -38,7 +38,7 @@ class afterSignIn extends Controller
 
     public function Resume(){
 
-        return 'resume';
+        return 'my resume';
 
     }
 
