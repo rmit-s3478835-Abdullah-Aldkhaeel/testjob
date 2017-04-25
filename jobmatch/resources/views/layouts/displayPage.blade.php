@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-    <title>Laravel</title>
+    <title>displayPage</title>
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" type = "text/css" href = "css.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <link href="blog.css" rel="stylesheet">
+
+
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 
     <style>
-
-        body{
+        body {
             background: url("./background2.jpg");
             background-position: center center;
             background-repeat: no-repeat;
@@ -25,33 +32,6 @@
             background-size: cover;
             background-color: grey;
         }
-
-        #layoutAndColor{
-            color: black;
-            margin-top: 20px;
-        }
-        #layoutAndColor h3{
-
-            color: #3a5c75;
-            font-family: "Arial Black", Gadget, sans-serif;
-            text-align: center;
-        }
-        a:hover{
-            background-color: black;
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-
-        }
-
-        .panel-bodyLanding
-        {
-            background-color: #f5f5f5;
-            color:white;
-
-        }
-
         footer {
             position: absolute;
             right: 0;
@@ -67,43 +47,40 @@
     </style>
     </head>
 <body id="app-layout">
-<nav class="navbar navbar-default navbar-static-top">
-    <h3><div style="text-align: center; color:rgba(0,0,0,0.82); font-family:courier;" >Job Seeking</div></h3>
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-
-            <!-- Collapsed Hamburger -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                <span class="sr-only">Toggle Navigation</span>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-
+            <a class="navbar-brand" href="#">SearchResult</a>
         </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#search">Logout</a></li>
+            </ul>
 
-        <div class="collapse navbar-collapse" id="app-navbar-collapse">
-            <!-- Left Side Of Navbar -->
-            <ul class="nav nav-tabs nav-justified">
-                <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="{{ url('/search') }}">Job Search</a></li>
-                <li><a href="{{ url('/about') }}">About</a></li>
-                <li><a href="{{ url('/contact') }}">Contact Us</a></li>
-                <!-- Authentication Links -->
-                @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
-                @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                        </ul>
-                    </li>
-            @endif
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option>Computer</option>
+                            <option>Art</option>
+                            <option>Sales</option>
+                            <option>Real Estate</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">SearchAgain</button>
+                </form>
+            </div><!--/.navbar-collapse -->
+        </div>
         </div>
     </div>
 </nav>

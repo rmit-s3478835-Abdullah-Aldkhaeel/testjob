@@ -52,3 +52,5 @@ Route::get('/logOut','logOut@logOut');
 Route::post('search','afterSignIn@searchResult');
 Route::post('editProfile','afterSignIn@EditProfile');
 Route::get('/resume','afterSignIn@Resume');
+Route::get('/displayJob','displayPage@displayJob');
+Route::get('/displayDes','displayPage@displayDes');

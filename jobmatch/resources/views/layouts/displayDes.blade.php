@@ -56,7 +56,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">SearchResult</a>
+            <a class="navbar-brand" href="#">JobDetails</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -66,20 +66,6 @@
                 <li><a href="#search">Search</a></li>
                 <li><a href="#search">Logout</a></li>
             </ul>
-
-            <div id="navbar" class="navbar-collapse collapse">
-                <form class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <select class="form-control">
-                            <option>Computer</option>
-                            <option>Art</option>
-                            <option>Sales</option>
-                            <option>Real Estate</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-success">SearchAgain</button>
-                </form>
-            </div><!--/.navbar-collapse -->
         </div>
         </div>
     </div>
