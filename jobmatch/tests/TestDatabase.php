@@ -26,4 +26,13 @@ class TestDatabase extends TestCase
         $user1 = DB::table('users')->where('name', 'Test Database');
         $user1->delete();
     }
+    public function testDatabase3()
+    {
+        $user = factory(App\User::class)->create([
+            'password' => '123456',
+        ]);
+        $this->seeInDatabase('users', ['password' => '123456']);
+        $user1 = DB::table('users')->where('password', '123456');
+        $user1->delete();
+    }
 }
