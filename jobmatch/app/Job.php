@@ -9,7 +9,7 @@ class Job extends Model
     //
     protected $fillable = [
 
-        'photo_id'
+        'photo_id',
         'job_title',
         'skill1',
         'skill2',

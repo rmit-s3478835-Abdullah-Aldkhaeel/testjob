@@ -19,7 +19,8 @@
         <thead>
         <tr>
             <th>Id</th>
-            <th>Photo</th>
+            <th>Image</th>
+            <th>Employer</th>
             <th>Job-Title</th>
             <th>Skill-1</th>
             <th>Skill-2</th>
@@ -40,7 +41,7 @@
                 <tr>
                     <td>{{$job->id}}</td>
                     <td><img height="50" src="{{$job->photo ? $job->photo->file : 'http://placehold.it/400x400'}}" alt=""></td>
-                    <td><a href="{{route('admin.jobs.edit', $job->id)}}">{{$job->name}}</a></td>
+                    <td><a href="{{route('admin.jobs.edit', $job->id)}}">{{$job->user->name}}</a></td>
                     <td>{{$job->job_title}}</td>
                     <td>{{$job->skill1}}</td>
                     <td>{{$job->skill2}}</td>
@@ -59,6 +60,14 @@
 
         </tbody>
     </table>
+
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-5">
+
+            {{$jobs->render()}}
+
+        </div>
+    </div>
 
 
 
