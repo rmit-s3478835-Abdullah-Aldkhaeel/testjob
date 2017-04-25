@@ -23,8 +23,8 @@ class TestAboutPage extends TestCase
     {
         $this->visit('/')
             ->click('Home')
-            ->seePageIs('/login')
-            ->see('Login');
+            ->seePageIs('/')
+            ->see('Welcome');
     }
     public function testLogininNavigation()
     {

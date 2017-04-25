@@ -26,7 +26,7 @@ class TestRegisterPage extends TestCase
             ->type('123456', 'password')
             ->type('123456', 'password_confirmation')
             ->press('Register')
-            ->see('Welcome');
+            ->see('My Account');
         $user = DB::table('users')->where('name', 'Huy');
             $user->delete();
     }
