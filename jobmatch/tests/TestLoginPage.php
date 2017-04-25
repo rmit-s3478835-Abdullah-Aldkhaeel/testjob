@@ -25,9 +25,9 @@ class TestLoginPage extends TestCase
         $this->visit('login')
             ->type('testlogin@gmail.com', 'email')
             ->type('123456','password')
-            ->press('Login');
-        $this->visit('home')
-            ->see('You are logged in!');
+            ->press('Login')
+            ->seePageIs('/myAccount')
+            ->see('My Account');
     }
     //invalid email with valid password
     public function test_login2()
