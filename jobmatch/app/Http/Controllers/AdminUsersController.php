@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Requests\UsersEditRequest;
 use App\Http\Requests\UsersRequest;
+use App\Profile;
 use App\Photo;
 use App\User;
 use Illuminate\Http\Request;

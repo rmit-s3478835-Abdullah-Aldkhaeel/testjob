@@ -27,7 +27,7 @@ class TestLandingPage extends TestCase
     public function testLogin()
     {
         $this->visit('/')
-            ->click('Sign In')
+            ->click('Log In')
             ->seePageIs('/login')
             ->see('Login');
     }
@@ -35,7 +35,14 @@ class TestLandingPage extends TestCase
     public function testSignup()
     {
         $this->visit('/')
-            ->click('Sign Up')
+            ->click('Register as Job Seejer')
+            ->seePageIs('/register')
+            ->see('Register');
+    }
+    public function testSignup2()
+    {
+        $this->visit('/')
+            ->click('Register as Employer')
             ->seePageIs('/register')
             ->see('Register');
     }
@@ -43,8 +50,8 @@ class TestLandingPage extends TestCase
     {
         $this->visit('/')
             ->click('Home')
-            ->seePageIs('/login')
-            ->see('Login');
+            ->seePageIs('/')
+            ->see('Welcome');
     }
     public function testAboutbutton()
     {

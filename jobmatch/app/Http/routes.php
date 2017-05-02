@@ -23,6 +23,7 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/job/{id}', ['as'=>'home.job', 'uses'=>'AdminJobsController@job']);
+Route::get('/profile/{id}', ['as'=>'home.profile', 'uses'=>'AdminProfilesController@profile']);
 
 
 //Route::get('/admin', function(){
@@ -42,6 +43,7 @@ Route::group(['middleware'=>'admin'], function(){
 
     Route::resource('admin/users', 'AdminUsersController');
     Route::resource('admin/jobs', 'AdminJobsController');
+    Route::resource('admin/profiles', 'AdminProfilesController');
 
 });
 /*Route::get('/');*/
@@ -52,3 +54,5 @@ Route::get('/logOut','logOut@logOut');
 Route::post('search','afterSignIn@searchResult');
 Route::post('editProfile','afterSignIn@EditProfile');
 Route::get('/resume','afterSignIn@Resume');
+Route::get('/displayJob','displayPage@displayJob');
+Route::get('/displayDes','displayPage@displayDes');

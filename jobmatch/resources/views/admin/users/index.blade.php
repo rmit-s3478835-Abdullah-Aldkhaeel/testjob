@@ -38,7 +38,4 @@
             @endif
             </tbody>
         </table>
-
-
-
 @stop

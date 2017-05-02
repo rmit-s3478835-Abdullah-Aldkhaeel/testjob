@@ -153,6 +153,21 @@
                         <!-- /.nav-second-level -->
                     </li>
 
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-hand-right"></i> Profiles<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{route('admin.profiles.index')}}">All Profiles</a>
+                            </li>
+
+                            <li>
+                                <a href="{{route('admin.profiles.create')}}">Create Profile</a>
+                            </li>
+
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+
 
 
                     {{--<li>--}}
