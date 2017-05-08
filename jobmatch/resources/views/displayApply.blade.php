@@ -1,84 +1,34 @@
-@extends('layouts.displayPage')
+@extends('layouts.displayApply')
 @section('content')
 
     <div class="container" style="margin-top: 80px">
+        <div class="col-md-8 col-md-push-2">
+        <div class="starter-template">
 
-        <div class="starter-template" style="background-color: white">
-            <table class="table table-striped">
-            <tr >
-                <th>Hot Ranking</th>
-                <th>JobName</th>
-                <th>Company</th>
-            </tr>
-                <tr >
-                    <th>1</th>
-                    <td><a href="#">Senior Software Engineer-3D Computer Vision</a></td>
-                    <td>Nearmap</td>
-                </tr>
-                <tr >
-                    <th>2</th>
-                    <td><a href="#">Power Programmer</a></td>
-                    <td>Infosys</td>
-                </tr>
-                <tr >
-                    <th>3</th>
-                    <td><a href="#">Computer Hardware Technician</a></td>
-                    <td>ComputerCare</td>
-                </tr>
-                <tr >
-                    <th>4</th>
-                    <td><a href="#"> Computer Vision Engineer</a></td>
-                    <td>Redfish Technology</td>
-                </tr>
-                <tr >
-                    <th>5</th>
-                    <td><a href="#">Computer Support Specialist</a></td>
-                    <td>Katapult Network</td>
-                </tr>
-                <tr >
-                    <th>6</th>
-                    <td><a href="#">Senior Computer Vision SWE</a></td>
-                    <td>Katapult Network</td>
-                </tr>
-                <tr >
-                    <th>7</th>
-                    <td><a href="#">Senior Computer Vision SWE</a></td>
-                    <td>Katapult Network</td>
-                </tr>
-                <tr >
-                    <th>8</th>
-                    <td><a href="#">Computer Technician</a></td>
-                    <td>Katapult Network</td>
-                </tr>
-                <tr >
-                    <th>9</th>
-                    <td><a href="#">Senior Computer Vision SWE</a></td>
-                    <td>Katapult Network</td>
-                </tr>
-                <tr >
-                    <th>10</th>
-                    <td><a href="#">Computer Vision Program Manager (4901r)</a></td>
-                    <td>Katapult Network</td>
-                </tr>
-            </table>
+            <div class="panel panel-default" style="margin-top: 80px">
+                <div class="panel-body">
 
-            <ul class="pagination" style="margin-left: 350px">
-                <li><a href="#">&laquo;</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">6</a></li>
-                <li><a href="#">7</a></li>
-                <li><a href="#">8</a></li>
-                <li><a href="#">9</a></li>
-                <li><a href="#">10</a></li>
-                <li><a href="#">&raquo;</a></li>
-            </ul>
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Phone</label>
+                            <input type="number" class="form-control" placeholder="Phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">Resume</label>
+                            <input type="file" id="exampleInputFile">
+                        </div>
+                        <button type="submit" class="btn btn-info">Apply</button>
+                    </form>
+
+                </div>
+            </div>
 
         </div>
-
+    </div>
     </div>
 
 @endsection

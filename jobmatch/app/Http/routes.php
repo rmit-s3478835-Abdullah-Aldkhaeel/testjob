@@ -54,3 +54,4 @@ Route::post('editProfile','afterSignIn@EditProfile');
 Route::get('/resume','afterSignIn@Resume');
 Route::get('/displayJob','displayPage@displayJob');
 Route::get('/displayDes','displayPage@displayDes');
+Route::get('/displayApply','displayPage@displayApply');

@@ -21,4 +21,10 @@ class displayPage extends Controller
                 return view('displayDes');
 
         }
+
+        public function displayApply(){
+
+
+                return view('displayApply');
+        }
 }

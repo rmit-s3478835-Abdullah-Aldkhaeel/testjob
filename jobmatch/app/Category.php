@@ -8,4 +8,11 @@ class Category extends Model
 {
     //
     protected $fillable = ['name'];
+
+
+    public function getData(){
+
+       $date= $this->where('id','>','3').get();
+        return $date;
+    }
 }
