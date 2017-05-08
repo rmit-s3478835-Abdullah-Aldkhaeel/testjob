@@ -23,6 +23,7 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/job/{id}', ['as'=>'home.job', 'uses'=>'AdminJobsController@job']);
+Route::get('/profile/{id}', ['as'=>'home.profile', 'uses'=>'AdminProfilesController@profile']);
 
 
 //Route::get('/admin', function(){
@@ -42,6 +43,7 @@ Route::group(['middleware'=>'admin'], function(){
 
     Route::resource('admin/users', 'AdminUsersController');
     Route::resource('admin/jobs', 'AdminJobsController');
+    Route::resource('admin/profiles', 'AdminProfilesController');
 
 });
 /*Route::get('/');*/

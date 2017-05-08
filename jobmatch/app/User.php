@@ -35,6 +35,12 @@ class User extends Authenticatable
 
     }
 
+    public function profile(){
+
+        return $this->belongsTo('App\Profile');
+
+    }
+
     public function isAdmin(){
 
 //        if($this->role->name  == "administrator" && $this->is_active == 1){
@@ -51,6 +57,13 @@ class User extends Authenticatable
 
 
         return $this->hasMany('App\Job');
+
+
+    }
+    public function profiles(){
+
+
+        return $this->hasMany('App\Profile');
 
 
     }

@@ -4,22 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Job extends Model
+class Profile extends Model
 {
-    //
     protected $fillable = [
 
         'photo_id',
-        'job_title',
         'skill1',
         'skill2',
         'skill3',
+        'experience',
         'interests',
         'description',
-        'wage',
 
 
-        ];
+    ];
 
     protected $primaryKey = 'id';
 
@@ -32,7 +30,6 @@ class Job extends Model
     }
 
 
-
     public function photo(){
 
 
@@ -41,12 +38,11 @@ class Job extends Model
 
     }
 
-    public function profile(){
+    public function job(){
 
 
-        return $this->belongsTo('App\Profile');
+        return $this->belongsTo('App\Job');
 
 
     }
-
 }
