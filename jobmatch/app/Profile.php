@@ -45,4 +45,12 @@ class Profile extends Model
 
 
     }
+
+    public function jobs(){
+
+
+        return $this->belongsToMany('App\Job');
+
+
+    }
 }

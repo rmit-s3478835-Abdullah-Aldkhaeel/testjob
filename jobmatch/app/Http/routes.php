@@ -59,3 +59,4 @@ Route::get('/resume','afterSignIn@Resume');
 Route::get('/displayJob','displayPage@displayJob');
 Route::get('/displayDes','displayPage@displayDes');
 Route::get('/displayApply','displayPage@displayApply');
+Route::get('admin/job_profile','Job_ProfileController@jobProfileDetails');
