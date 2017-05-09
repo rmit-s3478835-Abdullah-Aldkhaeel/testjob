@@ -2,7 +2,6 @@
 @section('content')
 
     <div class="container" style="margin-top: 80px">
-
         <div class="starter-template" style="background-color: white">
             <table class="table table-striped">
             <tr >
@@ -10,56 +9,13 @@
                 <th>JobName</th>
                 <th>Company</th>
             </tr>
+               @foreach($jobs as $job)
                 <tr >
-                    <th>1</th>
-                    <td><a href="#">Senior Software Engineer-3D Computer Vision</a></td>
-                    <td>Nearmap</td>
+                    <th>{{$job->job_rank}}</th>
+                    <td><a href="{{URL::to('/displayDes' ,array('job'=>$job))}}">{{$job->job_name}}</a></td>
+                    <td>{{$job->job_company}}</td>
                 </tr>
-                <tr >
-                    <th>2</th>
-                    <td><a href="#">Power Programmer</a></td>
-                    <td>Infosys</td>
-                </tr>
-                <tr >
-                    <th>3</th>
-                    <td><a href="#">Computer Hardware Technician</a></td>
-                    <td>ComputerCare</td>
-                </tr>
-                <tr >
-                    <th>4</th>
-                    <td><a href="#"> Computer Vision Engineer</a></td>
-                    <td>Redfish Technology</td>
-                </tr>
-                <tr >
-                    <th>5</th>
-                    <td><a href="#">Computer Support Specialist</a></td>
-                    <td>Katapult Network</td>
-                </tr>
-                <tr >
-                    <th>6</th>
-                    <td><a href="#">Senior Computer Vision SWE</a></td>
-                    <td>Katapult Network</td>
-                </tr>
-                <tr >
-                    <th>7</th>
-                    <td><a href="#">Senior Computer Vision SWE</a></td>
-                    <td>Katapult Network</td>
-                </tr>
-                <tr >
-                    <th>8</th>
-                    <td><a href="#">Computer Technician</a></td>
-                    <td>Katapult Network</td>
-                </tr>
-                <tr >
-                    <th>9</th>
-                    <td><a href="#">Senior Computer Vision SWE</a></td>
-                    <td>Katapult Network</td>
-                </tr>
-                <tr >
-                    <th>10</th>
-                    <td><a href="#">Computer Vision Program Manager (4901r)</a></td>
-                    <td>Katapult Network</td>
-                </tr>
+                @endforeach
             </table>
 
             <ul class="pagination" style="margin-left: 350px">

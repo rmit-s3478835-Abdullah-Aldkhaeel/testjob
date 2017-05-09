@@ -10,14 +10,10 @@ use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 
 class displayPage extends Controller
 {
-        public function displayJob(){
 
-                return view('displayPage');
-
-        }
-
-        public function displayDes(){
-
+        public function displayDes(Request $request){
+                
+                $job=$request->input('job');
                 return view('displayDes');
 
         }

@@ -46,6 +46,17 @@ class Job extends Model
 
         return $this->belongsTo('App\Profile');
 
+    }
+
+    public function jobcategory(){
+
+        return $this->belongsTo('App\Jobcategory');
+
+    }
+
+    public function displayJob(){
+//        $jobc=Job::find(1)->jobcategory;
+//        return $jobc;
 
     }
 

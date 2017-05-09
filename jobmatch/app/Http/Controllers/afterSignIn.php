@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+//use Request;
+use App\Job;
+use App\Profile;
+use App\Photo;
+use App\User;
+use App\Jobcategory;
 use App\Http\Requests;
 
 class afterSignIn extends Controller
@@ -25,10 +30,29 @@ class afterSignIn extends Controller
         return view('contact');
     }
 
-    public function searchResult(){
+    public function searchResult( Request $request){
 
-        return 'The result';
-    }
+        $jobcategory=new Jobcategory();
+
+        $allcategories=$jobcategory->getall();
+
+        $choice=$request->input('job');
+
+        foreach($allcategories  as $category){
+
+            if($category->category_name==$choice){
+
+                $jobs=$jobcategory->getjobs($category->id);
+
+                    return view('displayPage',compact('jobs'));
+                
+                }
+
+        }
+//     return view('displayPage');
+
+
+}
 
 
     public function EditProfile(){

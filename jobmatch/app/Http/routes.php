@@ -1,5 +1,13 @@
 <?php
-
+use App\Http\Requests\JobsRequest;
+use App\Job;
+use App\Photo;
+use App\Joblist;
+use Illuminate\Http\Request;
+use App\User;
+use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -55,5 +63,24 @@ Route::post('search','afterSignIn@searchResult');
 Route::post('editProfile','afterSignIn@EditProfile');
 Route::get('/resume','afterSignIn@Resume');
 Route::get('/displayJob','displayPage@displayJob');
-Route::get('/displayDes','displayPage@displayDes');
+
+
 Route::get('/displayApply','displayPage@displayApply');
+
+
+Route::get('/displayDes/{number}',function($number) {
+    $jobs=new Joblist();
+    
+    $all=$jobs->getall();
+
+    foreach ($all as $job){
+
+        if($job->id==$number){
+
+            return view('displayDes',compact('job'));
+        }
+
+    }
+
+//    return view('displayDes');
+});
