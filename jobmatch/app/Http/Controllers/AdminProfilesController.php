@@ -23,7 +23,7 @@ class AdminProfilesController extends Controller
     public function index()
     {
         //
-        $profiles = Job::paginate(4);
+        $profiles = Profile::paginate(4);
 
         return view('admin.profiles.index', compact('profiles'));
     }

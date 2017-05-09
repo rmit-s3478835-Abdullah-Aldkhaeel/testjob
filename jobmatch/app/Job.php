@@ -41,10 +41,10 @@ class Job extends Model
 
     }
 
-    public function profile(){
+    public function profiles(){
 
 
-        return $this->belongsTo('App\Profile');
+        return $this->belongsToMany('App\Profile');
 
     }
 
