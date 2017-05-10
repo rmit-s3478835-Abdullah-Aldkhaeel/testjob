@@ -68,7 +68,7 @@ Route::get('/displayJob','displayPage@displayJob');
 
 
 Route::get('/displayApply','displayPage@displayApply');
-<<<<<<< HEAD
+
 
 
 Route::get('/displayDes/{number}',function($number) {
@@ -87,6 +87,6 @@ Route::get('/displayDes/{number}',function($number) {
 
 //    return view('displayDes');
 });
-=======
+
 Route::get('admin/job_profile','Job_ProfileController@jobProfileDetails');
->>>>>>> 1569d2291d4df01a4ce36a400a072532b73d615b
+
