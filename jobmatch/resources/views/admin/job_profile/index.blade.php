@@ -33,7 +33,7 @@
                 @foreach($jobs as $job)
 
                     <tr>
-                        <td>{{ $job->job_id }}</td>
+                        <td>{{ $job->id }}</td>
                         <td>{{ $job->skill1 }}</td>
                         <td>{{ $job->skill2 }}</td>
                         <td>{{ $job->skill3 }}</td>

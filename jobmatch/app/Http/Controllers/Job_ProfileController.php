@@ -14,7 +14,10 @@ class Job_ProfileController extends Controller
 {
     public function jobProfileDetails()
     {
-        $jobs = Job::all();
-        return view('admin.job_profile.index', compact('jobs'));
+
+        $jobs = DB::table('jobs')->get();
+
+        return view('admin.job_profile.index', ['jobs' => $jobs]);
+
     }
 }
