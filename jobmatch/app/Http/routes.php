@@ -67,6 +67,11 @@ Route::post('matchJob','match@matchJob');
 Route::get('/resume','afterSignIn@Resume');
 Route::get('/displayJob','displayPage@displayJob');
 
+Route::get('session/get','SessionController@accessSessionData');
+Route::get('session/set','SessionController@storeSessionData');
+Route::get('session/remove','SessionController@deleteSessionData');
+
+
 Route::any('test',function(){
 
     dd(Session::put());

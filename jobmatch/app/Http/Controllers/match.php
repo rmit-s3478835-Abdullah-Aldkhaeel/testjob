@@ -23,7 +23,6 @@ class match extends Controller
      */
     
     public function matchJob(){
-
         return 'matchResult';
 
     }
