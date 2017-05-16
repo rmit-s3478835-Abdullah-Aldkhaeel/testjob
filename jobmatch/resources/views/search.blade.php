@@ -18,7 +18,7 @@
                             <option  value="Sales">Sales</option>
                             <option  value="Real Estate">Real Estate</option>
                         </select>
-                        <br></br>
+                        <br>
                         <button type="submit" class="btn-btn-danger" >Search</button>
                     </div>
                 </form>

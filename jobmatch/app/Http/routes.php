@@ -63,15 +63,27 @@ Route::get('/contact','afterSignIn@contact');
 Route::get('/logOut','logOut@logOut');
 Route::post('search','afterSignIn@searchResult');
 Route::post('editProfile','afterSignIn@EditProfile');
+Route::post('matchJob','match@matchJob');
 Route::get('/resume','afterSignIn@Resume');
 Route::get('/displayJob','displayPage@displayJob');
 
+Route::get('session/get','SessionController@accessSessionData');
+Route::get('session/set','SessionController@storeSessionData');
+Route::get('session/remove','SessionController@deleteSessionData');
 
+
+Route::any('test',function(){
+
+    dd(Session::put());
+
+
+});
 Route::get('/displayApply','displayPage@displayApply');
 
 
 
 Route::get('/displayDes/{number}',function($number) {
+    
     $jobs=new Joblist();
     
     $all=$jobs->getall();
