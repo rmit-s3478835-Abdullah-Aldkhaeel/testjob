@@ -1,9 +1,9 @@
-@extends('layouts.beforeContentPage')
+@extends('layouts.myAccountPage')
 @section('content')
     <div class="container-fluid" xmlns="http://www.w3.org/1999/html">
         <div class="row">
             <div class="col-md-4 col-md-push-4" id="layoutAndColor">
-                <h3>My Account</h3>
+                <h3>My Account - Job Seeker</h3>
                 <hr>
                 <p color="black">Edit Password or Email if you want</p>
                 <form action="editProfile" method="post">
@@ -88,6 +88,7 @@
                 </a>
 
                 <br><br>
+                <br>
 
             </div>
         </div>
