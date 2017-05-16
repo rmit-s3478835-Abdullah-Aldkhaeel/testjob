@@ -10,6 +10,7 @@ use App\Photo;
 use App\User;
 use App\Jobcategory;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 class afterSignIn extends Controller
 {
@@ -19,8 +20,9 @@ class afterSignIn extends Controller
 
     }
 
-    public function myAccount(){
-
+    public function myAccount()
+    {
+        echo "<script>alert('".var_dump(Auth::user()->id)."')</script>";
         return view('MyAccount');
 
     }
