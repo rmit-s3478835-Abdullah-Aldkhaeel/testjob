@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-
 @extends('layouts.beforeContentPage')
-=======
-@extends('layouts.myAccountPage')
->>>>>>> 8559c70d72953e3aaf35cda89b4bf88114479168
 @section('content')
     <div class="container-fluid" xmlns="http://www.w3.org/1999/html" style="margin-top: 5px">
         <div class="row">
             <div class="col-md-4 col-md-push-4" id="layoutAndColor">
-<<<<<<< HEAD
                 <h3>Edit Profile</h3>
-=======
-                <h3>My Account - Job Seeker</h3>
->>>>>>> 8559c70d72953e3aaf35cda89b4bf88114479168
                 <hr>
                     @if($errors)
                     <ul>
@@ -100,13 +91,8 @@
                     View jobs you've applied for
                     </p>
                 </a>
-<<<<<<< HEAD
-=======
-
                 <br><br>
                 <br>
-
->>>>>>> 8559c70d72953e3aaf35cda89b4bf88114479168
             </div>
         </div>
     </div>
