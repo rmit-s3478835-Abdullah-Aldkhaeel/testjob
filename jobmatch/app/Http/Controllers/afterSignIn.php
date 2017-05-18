@@ -10,6 +10,11 @@ use App\Photo;
 use App\User;
 use App\Jobcategory;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use DB;
+use Validator;
+
 
 class afterSignIn extends Controller
 {
@@ -20,8 +25,8 @@ class afterSignIn extends Controller
     }
 
     public function myAccount(){
-
-        return view('MyAccount');
+        
+     return view('MyAccount');
 
     }
 
@@ -49,15 +54,43 @@ class afterSignIn extends Controller
                 }
 
         }
-//     return view('displayPage');
-
-
 }
 
 
-    public function EditProfile(){
+    public function EditProfile(Request $request){
+        $success="successfull change your personal profile";
+        $pwdR=$request->input('pwd');
+        $emailR=$request->input('email');
 
-        return 'EditProfile';
+        $userInf=AUTH::user();
+        $userId=$userInf->id;
+//        DB::update('update users set name= $pwdR where name= ?',[$pass]);
+        $num=DB::update('UPDATE users SET email= ?,password= ? WHERE id= ?',array($emailR,$pwdR,$userId));
+
+        $validator=Validator::make($request->all(),[
+                    'pwd'=>'required|max:255',
+                    'email'=>'required',
+                    'email'=>array('regex:/\w{6,16}@\w{1,}\.\w{2,3}/i'),
+            ]
+    );
+
+        if($validator->fails()){
+
+        return redirect('/myAccount')->withErrors($validator);
+        }
+
+        if($num) {
+
+            return redirect('/changeProfile');
+
+        }
+    }
+
+    public function changeProfile(){
+
+       $user=AUTH::user();
+
+       return view('afterChangeProfile',compact('user'));
     }
 
     public function Resume(){

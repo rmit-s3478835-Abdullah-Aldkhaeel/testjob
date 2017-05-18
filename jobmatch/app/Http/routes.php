@@ -58,7 +58,19 @@ Route::group(['middleware'=>'admin'], function(){
 });
 /*Route::get('/');*/
 Route::get('/search','afterSignIn@search');
-Route::get('/myAccount','afterSignIn@myAccount');
+Route::get('/myAccount',function(){
+
+    $user=AUTH::user();
+    $userPass=$user->password;
+    $userEm=$user->email;
+    $userInfo=[
+       'userP'=> $userPass,
+        'usere'=>$userEm
+    ];
+    return view('MyAccount',compact('userInfo'));
+
+});
+Route::get('/changeProfile','afterSignIn@changeProfile');
 Route::get('/contact','afterSignIn@contact');
 Route::get('/logOut','logOut@logOut');
 Route::post('search','afterSignIn@searchResult');
@@ -73,8 +85,6 @@ Route::get('session/remove','SessionController@deleteSessionData');
 
 
 Route::any('test',function(){
-
-    dd(Session::put());
 
 
 });

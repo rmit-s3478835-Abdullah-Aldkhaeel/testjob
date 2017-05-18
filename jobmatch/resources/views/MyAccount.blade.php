@@ -1,21 +1,27 @@
+
 @extends('layouts.beforeContentPage')
 @section('content')
-    <div class="container-fluid" xmlns="http://www.w3.org/1999/html">
+    <div class="container-fluid" xmlns="http://www.w3.org/1999/html" style="margin-top: 5px">
         <div class="row">
             <div class="col-md-4 col-md-push-4" id="layoutAndColor">
-                <h3>My Account</h3>
+                <h3>Edit Profile</h3>
                 <hr>
-                <p color="black">Edit Password or Email if you want</p>
+                    @if($errors)
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li><strong>{{$error}}</strong></li>
+                        @endforeach
+                    </ul>
+                    @endif
                 <form action="editProfile" method="post">
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="input-group" id="layoutAndColor">
                         <span class="input-group-addon" style="color:black">Password</span>
-                        <input type="text"  class="form-control" name="pwd"/>
+                        <input type="password"  class="form-control" name="pwd" value=" {{$userInfo['userP']}}"/>
                     </div>
-
                     <div class="input-group" id="layoutAndColor">
                         <span class="input-group-addon" style="color:black">Email</span>
-                        <input type="text"  class="form-control" name="email"/>
+                        <input type="text"  class="form-control" name="email" value=" {{$userInfo['usere']}}"/>
                     </div>
                     <button  type="submit" class="btn btn-primary form-control" style="margin-top: 20px;height: 40px">
                         <p style="font-size: 20px">
@@ -45,21 +51,21 @@
                 </div>
 
                 <div class="checkbox" style="color: blue">
-                    <label><strong>hobby:</strong></label>
+                    <label><strong>Interest:</strong></label>
                     <label>
-                        <input type="checkbox" name="hobby" value="basketball" >basketball
+                        <input type="checkbox" name="interests" value="basketball" >basketball
                     </label>
                     <label>
-                        <input type="checkbox" name="hobby" value="football">football
+                        <input type="checkbox" name="interests" value="football">football
                     </label>
                     <label>
-                        <input type="checkbox" name="hobby" value="tennis">tennis
+                        <input type="checkbox" name="interests" value="tennis">tennis
                     </label>
                     <label>
-                        <input type="checkbox" name="hobby" value="cricket">cricket
+                        <input type="checkbox" name="interests" value="cricket">cricket
                     </label>
                     <label>
-                        <input type="checkbox" name="hobby" value="tabletennis">table tennis
+                        <input type="checkbox" name="interests" value="tabletennis">table tennis
                     </label>
                 </div>
 
@@ -86,8 +92,6 @@
                     View jobs you've applied for
                     </p>
                 </a>
-
-
             </div>
         </div>
     </div>
