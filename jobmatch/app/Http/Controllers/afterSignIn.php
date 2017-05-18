@@ -11,10 +11,13 @@ use App\User;
 use App\Jobcategory;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Session;
 use DB;
 use Validator;
 
+=======
+>>>>>>> 8559c70d72953e3aaf35cda89b4bf88114479168
 
 class afterSignIn extends Controller
 {
@@ -24,9 +27,16 @@ class afterSignIn extends Controller
 
     }
 
+<<<<<<< HEAD
     public function myAccount(){
         
      return view('MyAccount');
+=======
+    public function myAccount()
+    {
+        echo "<script>alert('".var_dump(Auth::user()->id)."')</script>";
+        return view('MyAccount');
+>>>>>>> 8559c70d72953e3aaf35cda89b4bf88114479168
 
     }
 

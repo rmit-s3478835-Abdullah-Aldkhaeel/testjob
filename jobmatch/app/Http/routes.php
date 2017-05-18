@@ -27,7 +27,10 @@ Route::get('/about', function () {
 });
 
 Route::auth();
-
+Route::get('/myAccountEmployer', function (){
+    return view ('myAccountEmployer');
+});
+Route::any('/createJob','Controller@createJob');
 Route::get('/home', 'HomeController@index');
 
 Route::get('/job/{id}', ['as'=>'home.job', 'uses'=>'AdminJobsController@job']);
