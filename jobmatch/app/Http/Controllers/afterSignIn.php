@@ -11,13 +11,10 @@ use App\User;
 use App\Jobcategory;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Session;
 use DB;
 use Validator;
 
-=======
->>>>>>> 8559c70d72953e3aaf35cda89b4bf88114479168
 
 class afterSignIn extends Controller
 {
@@ -27,16 +24,10 @@ class afterSignIn extends Controller
 
     }
 
-<<<<<<< HEAD
-    public function myAccount(){
-        
-     return view('MyAccount');
-=======
     public function myAccount()
     {
         echo "<script>alert('".var_dump(Auth::user()->id)."')</script>";
         return view('MyAccount');
->>>>>>> 8559c70d72953e3aaf35cda89b4bf88114479168
 
     }
 
@@ -67,34 +58,36 @@ class afterSignIn extends Controller
 }
 
 
-    public function EditProfile(Request $request){
-        $success="successfull change your personal profile";
-        $pwdR=$request->input('pwd');
-        $emailR=$request->input('email');
+    public function EditProfile(Request $request)
+        {
+            $success = "successfull change your personal profile";
+            $pwdR = $request->input('pwd');
+            $emailR = $request->input('email');
 
-        $userInf=AUTH::user();
-        $userId=$userInf->id;
+            $userInf = AUTH::user();
+            $userId = $userInf->id;
 //        DB::update('update users set name= $pwdR where name= ?',[$pass]);
-        $num=DB::update('UPDATE users SET email= ?,password= ? WHERE id= ?',array($emailR,$pwdR,$userId));
+            $num = DB::update('UPDATE users SET email= ?,password= ? WHERE id= ?', array($emailR, $pwdR, $userId));
 
-        $validator=Validator::make($request->all(),[
-                    'pwd'=>'required|max:255',
-                    'email'=>'required',
-                    'email'=>array('regex:/\w{6,16}@\w{1,}\.\w{2,3}/i'),
-            ]
-    );
+            $validator = Validator::make($request->all(), [
+                    'pwd' => 'required|max:255',
+                    'email' => 'required',
+                    'email' => array('regex:/\w{6,16}@\w{1,}\.\w{2,3}/i'),
+                ]
+            );
 
-        if($validator->fails()){
+            if ($validator->fails()) {
 
-        return redirect('/myAccount')->withErrors($validator);
+                return redirect('/myAccount')->withErrors($validator);
+            }
+
+            if ($num) {
+
+                return redirect('/changeProfile');
+
+            }
         }
 
-        if($num) {
-
-            return redirect('/changeProfile');
-
-        }
-    }
 
     public function changeProfile(){
 
