@@ -89,6 +89,7 @@
                 <li><a href="{{ url('/search') }}">Job Search</a></li>
                 <li><a href="{{ url('/about') }}">About</a></li>
                 <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                <li><a href="{{ url('/matchJob') }}">matchJob</a></li>
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">Login</a></li>
