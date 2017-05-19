@@ -1,9 +1,24 @@
 @extends('layouts.beforeContentPage')
 @section('content')
-    <div class="container-fluid" xmlns="http://www.w3.org/1999/html" style="margin-top: 5px">
+    @if(!empty(session('success')))
+        <div class=" alert alert-danger col-md-8 col-md-push-1">
+            <a href="#" class="close" data-dismiss="alert">
+                &times;
+            </a>
+            <strong> {{session('success')}}</strong>
+        </div>
+    @endif
+    @if(!empty(session('fail')))
+        <div class=" alert alert-danger col-md-8 col-md-push-1">
+            <a href="#" class="close" data-dismiss="alert">
+                &times;
+            </a>
+            <strong> {{session('fail')}}</strong>
+        </div>
+    @endif
+    <div class="container-fluid" xmlns="http://www.w3.org/1999/html" style="margin-top: 80px">
         <div class="row">
-
-            <div class="container" style="margin-top: 80px">
+            <div class="container" style="margin-top: 20px">
                 <div class="starter-template" style="background-color: white">
                     <table class="table table-striped">
                         <tr >
@@ -13,7 +28,7 @@
                         </tr>
                         @foreach($userJobs as $userJob)
                             <tr >
-                                <th>{{$userJob->job_title}}</th>
+                                <th><a href="{{URL::to('/details',array('userJob'=>$userJob->id))}}">{{$userJob->job_title}}</a></th>
                                 <td>{{$userJob->description}}</td>
                                 <td>{{$userJob->company}}</td>
                             </tr>
