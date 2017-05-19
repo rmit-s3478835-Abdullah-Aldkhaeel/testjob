@@ -53,16 +53,14 @@
         }
 
         footer {
-            position: relative;
+            position: absolute;
             right: 0;
             bottom: 0;
             left: 0;
             padding: 1rem;
             color: black;
             background-color: rgba(245, 245, 245, 0.6);
-
             text-align: center;
-
         }
     </style>
     </head>
@@ -71,7 +69,6 @@
     <h3><div style="text-align: center; color:rgba(0,0,0,0.82); font-family:courier;" >Job Seeking</div></h3>
     <div class="container">
         <div class="navbar-header">
-
             <!-- Collapsed Hamburger -->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                 <span class="sr-only">Toggle Navigation</span>

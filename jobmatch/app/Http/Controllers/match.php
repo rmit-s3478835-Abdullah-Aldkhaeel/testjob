@@ -37,9 +37,7 @@ class match extends Controller
         $deleted = DB::delete('delete from jobUsers where user_id= ?',
         [$user_id]
         );
-
-
-
+        
         $jobs = DB::select('select * from jobs');
         //skills matching the jobs;
         if ($skills != NULL) {
@@ -50,12 +48,11 @@ class match extends Controller
                         }
                 }
                 if($num1>=3){
-                   $exist= DB::select('select * from jobUsers where user_id = ? and job_title= ? and description= ? and wage= ? and company=?',
-                        [$user_id, $job->job_title, $job->description, $job->wage, $job->company]);
-
+                   $exist= DB::select('select * from jobUsers where user_id = ? and job_title= ? and description= ? and wage= ? and company=? and companyDes=?'  ,
+                        [$user_id, $job->job_title, $job->description, $job->wage, $job->company,$job->companyDes]);
                     if(!$exist) {
-                        DB::insert('insert into jobUsers (user_id, job_title, description, wage,company) values (?, ?, ? ,?,? )',
-                            [$user_id, $job->job_title, $job->description, $job->wage, $job->company]);
+                        DB::insert('insert into jobUsers (user_id, job_title, description, wage,company,companyDes) values (?, ?, ? ,?,?,? )',
+                            [$user_id, $job->job_title, $job->description, $job->wage, $job->company,$job->companyDes]);
                         $num1 = 0;
                     }else{
                         $num1=0;
@@ -70,7 +67,7 @@ class match extends Controller
             return redirect('matchJob')->withName('The skills and interests should be selected');
         }
 
-
+        //interests match the job
         if($interests!=NULL){
             foreach ($jobs as $job) {
                 foreach ($interests as $interest){
@@ -79,12 +76,12 @@ class match extends Controller
                     }
                 }
                 if($num2>=3){
-                    $exist= DB::select('select * from jobUsers where user_id = ? and job_title= ? and description= ? and wage= ? and company=?',
-                        [$user_id, $job->job_title, $job->description, $job->wage, $job->company]);
+                    $exist= DB::select('select * from jobUsers where user_id = ? and job_title= ? and description= ? and wage= ? and company=? and companyDes=?',
+                        [$user_id, $job->job_title, $job->description, $job->wage, $job->company,$job->companyDes]);
 
                     if(!$exist) {
-                        DB::insert('insert into jobUsers (user_id, job_title, description, wage,company) values (?, ?, ? ,?,? )',
-                            [$user_id, $job->job_title, $job->description, $job->wage, $job->company]);
+                        DB::insert('insert into jobUsers (user_id, job_title, description, wage,company,companyDes) values (?, ?, ? ,?,? ,?)',
+                            [$user_id, $job->job_title, $job->description, $job->wage, $job->company,$job->companyDes]);
                         $num2 = 0;
                     }else{
                         $num2=0;
@@ -96,16 +93,16 @@ class match extends Controller
                 }
             }
         }else{
-            return redirect('matchJob')->withName('The interest and interests should be selected');
+            return redirect('matchJob')->withName('The skills and interests should be selected');
         }
-
+    //experience match the jobs
         foreach ($jobs as $job){
                 if($experience==$job->experience){
-                    $exist= DB::select('select * from jobUsers where user_id = ? and job_title= ? and description= ? and wage= ? and company=?',
-                        [$user_id, $job->job_title, $job->description, $job->wage, $job->company]);
+                    $exist= DB::select('select * from jobUsers where user_id = ? and job_title= ? and description= ? and wage= ? and company=? and companyDes=?',
+                        [$user_id, $job->job_title, $job->description, $job->wage, $job->company,$job->companyDes]);
                     if(!$exist){
-                        DB::insert('insert into jobUsers (user_id, job_title, description, wage,company) values (?, ?, ? ,?,? )',
-                            [$user_id, $job->job_title, $job->description, $job->wage, $job->company]);
+                        DB::insert('insert into jobUsers (user_id, job_title, description, wage,company,companyDes) values (?, ?, ? ,?,? ,?)',
+                            [$user_id, $job->job_title, $job->description, $job->wage, $job->company,$job->companyDes]);
 
                     }else{
                         continue;
@@ -130,4 +127,5 @@ class match extends Controller
         
         return view('displayMatch',compact('userJobs'));
     }
+
 }

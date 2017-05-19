@@ -1,4 +1,4 @@
-@extends('layouts.beforeContentPage')
+@extends('layouts.myAccountPage')
 @section('content')
     <div class="container-fluid" xmlns="http://www.w3.org/1999/html" style="margin-top: 5px">
         <div class="row">
@@ -31,7 +31,13 @@
                 </form>
                 <a href="{{URL::to('/resume')}}" class="btn btn-danger form-control" style="margin-top: 10px;height: 40px">
                     <p style="font-size: 20px">
-                    View jobs you've applied for
+                    View your application from CategorySearch
+                    </p>
+                </a>
+
+                <a href="{{URL::to('/resume2')}}" class="btn btn-success form-control" style="margin-top: 10px;height: 40px">
+                    <p style="font-size: 20px">
+                        View your application from jobMatching
                     </p>
                 </a>
                 <br><br>

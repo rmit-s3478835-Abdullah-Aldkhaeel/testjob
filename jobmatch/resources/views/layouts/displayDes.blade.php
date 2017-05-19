@@ -61,10 +61,11 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#search">Search</a></li>
-                <li><a href="#search">Logout</a></li>
+                <li><a href="{{ url('/about') }}">About</a></li>
+                <li><a href="{{ url('/contact') }}">Contact</a></li>
+                <li><a href="{{ url('/search') }}">Search</a></li>
+                <li><a href="{{ url('/matchJob') }}">matchJob</a></li>
+                <li><a href="{{ url('/logout') }}">Logout</a></li>
             </ul>
         </div>
         </div>

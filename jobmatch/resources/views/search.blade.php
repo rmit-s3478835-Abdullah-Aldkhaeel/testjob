@@ -4,7 +4,6 @@
         <div class="row">
             <br>
             <br>
-
             <div class="box">
                 <br>
                 <h3>Select Classification</h3>
@@ -26,6 +25,4 @@
 
         </div>
     </div>
-
-
 @endsection

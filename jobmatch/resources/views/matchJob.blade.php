@@ -1,4 +1,4 @@
-@extends('layouts.beforeContentPage')
+@extends('layouts.myAccountPage')
 @section('content')
     @if(Session::get('name'))
         <div class=" alert alert-danger col-md-8 col-md-push-1">
@@ -87,20 +87,59 @@
                                 <div class="checkbox">
                                 <label><strong>Interest:</strong></label>
                                 <label>
-                                    <input type="checkbox" name="interests[]" value="basketball" >basketball
+                                    <input type="checkbox" name="interests[]" value="reading Newspaper" >reading Newspaper
                                 </label>
                                 <label>
-                                    <input type="checkbox" name="interests[]" value="football">football
+                                    <input type="checkbox" name="interests[]" value="meditation">meditation
                                 </label>
                                 <label>
-                                    <input type="checkbox" name="interests[]" value="tennis">tennis
+                                    <input type="checkbox" name="interests[]" value="critical thinking">critical thinking
                                 </label>
                                 <label>
-                                    <input type="checkbox" name="interests[]" value="cricket">cricket
+                                    <input type="checkbox" name="interests[]" value="programming contest">programming contest
                                 </label>
                                 <label>
-                                    <input type="checkbox" name="interests[]" value="table tennis">table tennis
+                                    <input type="checkbox" name="interests[]" value="playing game">playing game
                                 </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="reading blogs">reading blogs
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="fitness">fitness
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="reading microblog">reading microblog
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="hunting">hunting
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="backetball">backetball
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="debug">debug
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="visiting Technical website">visiting Technical website
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="programming contest">programming contest
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="management">management
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="exercise">exercise
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="cooking">cooking
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="independent learning">independent learning
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="design">design
+                                    </label>
                                 </div>
                             </div>
                         </div>

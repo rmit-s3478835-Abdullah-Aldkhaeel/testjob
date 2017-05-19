@@ -91,8 +91,35 @@ class afterSignIn extends Controller
     }
 
     public function Resume(){
+        $user=AUTH::user();
+       $user_id=$user->id;
+          $resumeCs=  DB::select('select * from jobresumeCs where user_id=?',
+       [$user_id]);
 
-        return 'my resume';
+       if(!$resumeCs){
+            $info="You didn't applied the jobs by jobSearching";
+            return view('resumeCE',compact('info'));
+        }else{
+
+            return view('resumeC',compact('resumeCs'));
+       }
+
+
+    }
+    public function Resume2(){
+
+        $user=AUTH::user();
+        $user_id=$user->id;
+        $resumeMs=  DB::select('select * from jobresumes where user_id=?',
+            [$user_id]);
+        if(!$resumeMs){
+            $info1="You didn't applied the jobs by jobMatching";
+            return view('resumeME',compact('info1'));
+        }else{
+
+            return view('resumeM',compact('resumeMs'));
+        }
+
 
     }
 
