@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
         body {
             background: url("./background.jpg");
             background-position: center center;
@@ -23,6 +27,7 @@
             background-attachment: fixed;
             background-size: cover;
             background-color: grey;
+            margin: 0 0 100px;
         }
 
         .fa-btn {
@@ -37,33 +42,25 @@
 
         }
 
-        .button {
-            background-color: #5C97BF;
-            border: none;
-            color: white;
-            padding: 15px 40px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            width: 100%;
+        .btn-primary {
+            color: #fff;
+            background-color: #0495c9;
+            border-color: #357ebd; /*set the color you want here*/
         }
-        .button:hover {
+        .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+            color: #fff;
             background-color: #49bf70;
         }
         footer {
-            padding: 0.5em;
-            color: black;
-            background-color: rgba(245, 245, 245, 0.6);
-            clear: left;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            position: absolute;
             left: 0;
-            right: 0;
+            bottom: 0;
+            height: 30px;
+            width: 100%;
+            overflow:hidden;
+            color: black;
+            text-align: center;
+            background-color: rgba(245, 245, 245, 0.6);
         }
     </style>
 </head>
@@ -88,13 +85,16 @@
                 <ul class="nav nav-tabs nav-justified">
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ url('/about') }}">About</a></li>
-                    <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                    <li><a href="{{ url('/contact') }}">Contact</a></li>
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                        <li><a href="{{ url('/myAccount') }}">My Account</a></li>
+                        <li><a href="{{ url('/myAccount') }}">My Account</a>
+                        <li><a href="{{ url('/matchJob') }}">Job Matching</a></li>
+                        <li><a href="{{ url('/search') }}">Search</a></li>
+                        <li><a href="{{ url('/logout') }}">Logout</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>

@@ -24,6 +24,10 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
         body {
             background: url("./background2.jpg");
             background-position: center center;
@@ -31,43 +35,61 @@
             background-attachment: fixed;
             background-size: cover;
             background-color: grey;
+            margin: 0 0 100px;
         }
         footer {
             position: absolute;
-            right: 0;
-            bottom: 0;
             left: 0;
-            padding: 1rem;
+            bottom: 0;
+            height: 30px;
+            width: 100%;
+            overflow:hidden;
             color: black;
-            background-color: rgba(245, 245, 245, 0.6);
-
             text-align: center;
-
+            background-color: rgba(245, 245, 245, 0.6);
         }
     </style>
     </head>
 <body id="app-layout">
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-static-top">
+    <h3><div style="text-align: center; color:rgba(0,0,0,0.82); font-family:courier;" >Job Seeking</div></h3>
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
+            <!-- Collapsed Hamburger -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">JobDetails</a>
+
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+
+        <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <!-- Left Side Of Navbar -->
+            <ul class="nav nav-tabs nav-justified">
+                <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="{{ url('/about') }}">About</a></li>
                 <li><a href="{{ url('/contact') }}">Contact</a></li>
-                <li><a href="{{ url('/search') }}">Search</a></li>
-                <li><a href="{{ url('/matchJob') }}">matchJob</a></li>
-                <li><a href="{{ url('/logout') }}">Logout</a></li>
-            </ul>
-        </div>
+                <!-- Authentication Links -->
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/register') }}">Register</a></li>
+                @else
+                    <li><a href="{{ url('/myAccount') }}">My Account</a>
+                    <li><a href="{{ url('/matchJob') }}">Job Matching</a></li>
+                    <li><a href="{{ url('/search') }}">Search</a></li>
+                    <li><a href="{{ url('/logout') }}">Logout</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                        </ul>
+                    </li>
+            @endif
         </div>
     </div>
 </nav>

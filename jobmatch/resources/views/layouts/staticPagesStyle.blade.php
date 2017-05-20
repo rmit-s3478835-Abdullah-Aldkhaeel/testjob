@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
         body {
             background: url("./background2.jpg");
             background-position: center center;
@@ -23,6 +27,8 @@
             background-attachment: fixed;
             background-size: cover;
             background-color: grey;
+            margin: 0 0 100px;
+
         }
 
         .fa-btn {
@@ -82,17 +88,18 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav nav-tabs nav-justified">
+                    <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ url('/about') }}">About</a></li>
                     <li><a href="{{ url('/contact') }}">Contact</a></li>
-                    <li><a href="{{ url('/search') }}">Search</a></li>
-                    <li><a href="{{ url('/matchJob') }}">matchJob</a></li>
-                    <li><a href="{{ url('/logout') }}">Logout</a></li>
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                        <li><a href="{{ url('/myAccount') }}">My Account</a></li>
+                        <li><a href="{{ url('/myAccount') }}">My Account</a>
+                        <li><a href="{{ url('/matchJob') }}">Job Matching</a></li>
+                        <li><a href="{{ url('/search') }}">Search</a></li>
+                        <li><a href="{{ url('/logout') }}">Logout</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>

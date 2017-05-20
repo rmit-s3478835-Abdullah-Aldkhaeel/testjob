@@ -24,6 +24,10 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
         body {
             background: url("./background2.jpg");
             background-position: center center;
@@ -31,18 +35,18 @@
             background-attachment: fixed;
             background-size: cover;
             background-color: grey;
+            margin: 0 0 100px;
         }
         footer {
             position: absolute;
-            right: 0;
-            bottom: 0;
             left: 0;
-            padding: 1rem;
+            bottom: 0;
+            height: 30px;
+            width: 100%;
+            overflow:hidden;
             color: black;
-            background-color: rgba(245, 245, 245, 0.6);
-
             text-align: center;
-
+            background-color: rgba(245, 245, 245, 0.6);
         }
     </style>
     </head>

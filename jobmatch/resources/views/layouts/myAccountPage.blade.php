@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
 
         body{
             background: url("./background2.jpg");
@@ -24,15 +28,23 @@
             background-attachment: fixed;
             background-size: cover;
             background-color: grey;
+            margin: 0 0 100px; /* bottom = footer height */
         }
 
         #layoutAndColor{
             color: black;
             margin-top: 20px;
         }
+        #layoutAndColor h5{
+
+            color: #0e4862;
+            font-family: "Arial Black", Gadget, sans-serif;
+            text-align: center;
+        //text-shadow: 0px 1px #1980af;
+        }
         #layoutAndColor h3{
 
-            color: #3a5c75;
+            color: #0e4862;
             font-family: "Arial Black", Gadget, sans-serif;
             text-align: center;
         }
@@ -45,25 +57,34 @@
 
         }
 
-        .panel-bodyLanding
-        {
-            background-color: #f5f5f5;
-            color:white;
 
+        .well {
+            background: rgba(255, 255, 255, 0.45);
+
+            overflow-y: scroll;
+        }
+        .wrapper {
+            text-align: center;
+        }
+
+        .btn btn-success btn-lg {
+            position: absolute;
+            top: 50%;
         }
 
         footer {
             position: absolute;
-            right: 0;
-            bottom: 0;
             left: 0;
-            padding: 1rem;
+            bottom: 0;
+            height: 30px;
+            width: 100%;
+            overflow:hidden;
             color: black;
-            background-color: rgba(245, 245, 245, 0.6);
             text-align: center;
+            background-color: rgba(245, 245, 245, 0.6);
         }
     </style>
-    </head>
+</head>
 <body id="app-layout">
 <nav class="navbar navbar-default navbar-static-top">
     <h3><div style="text-align: center; color:rgba(0,0,0,0.82); font-family:courier;" >Job Seeking</div></h3>
@@ -83,15 +104,17 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav nav-tabs nav-justified">
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="{{ url('/search') }}">Job Search</a></li>
                 <li><a href="{{ url('/about') }}">About</a></li>
-                <li><a href="{{ url('/contact') }}">Contact Us</a></li>
-                <li><a href="{{ url('/matchJob') }}">matchJob</a></li>
+                <li><a href="{{ url('/contact') }}">Contact</a></li>
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">Login</a></li>
                     <li><a href="{{ url('/register') }}">Register</a></li>
                 @else
+                    <li><a href="{{ url('/myAccount') }}">My Account</a>
+                    <li><a href="{{ url('/matchJob') }}">Job Matching</a></li>
+                    <li><a href="{{ url('/search') }}">Search</a></li>
+                    <li><a href="{{ url('/logout') }}">Logout</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
@@ -105,11 +128,11 @@
         </div>
     </div>
 </nav>
-    @yield('content')
-    <footer>Copyright 2017 &copy; Job Seeking</footer>
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+@yield('content')
+<footer>Copyright 2017 &copy; Job Seeking</footer>
+<!-- JavaScripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+{{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>
