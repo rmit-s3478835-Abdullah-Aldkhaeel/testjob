@@ -97,7 +97,7 @@ class afterSignIn extends Controller
        [$user_id]);
 
        if(!$resumeCs){
-            $info="You didn't applied the jobs by jobSearching";
+            $info="You haven't applied for any job from Search page";
             return view('resumeCE',compact('info'));
         }else{
 
@@ -113,7 +113,7 @@ class afterSignIn extends Controller
         $resumeMs=  DB::select('select * from jobresumes where user_id=?',
             [$user_id]);
         if(!$resumeMs){
-            $info1="You didn't applied the jobs by jobMatching";
+            $info1="You haven't applied for any job from Job Matching page";
             return view('resumeME',compact('info1'));
         }else{
 

@@ -1,4 +1,4 @@
-@extends('layouts.displayDes')
+@extends('layouts.beforeContentPage')
 @section('content')
 
     @if(!empty(session('success1')))
@@ -25,7 +25,7 @@
                 <div class="panel-body">
                    <strong><p style="font-size: 20px">{{$job->job_name}}</p></strong>
                     <p>{{$job->job_company}}</p>
-                    <a href="{{URL::to('/applyJobC',array('$job'=>$job->id))}}" class="btn btn-success">EAST APPLY</a>
+                    <a href="{{URL::to('/applyJobC',array('$job'=>$job->id))}}" class="btn btn-success">Easy Apply</a>
                 </div>
             </div>
 

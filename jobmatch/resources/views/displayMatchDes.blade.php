@@ -1,4 +1,4 @@
-@extends('layouts.displayDes')
+@extends('layouts.beforeContentPage')
 @section('content')
 
     <div class="container" style="margin-top: 60px" xmlns="http://www.w3.org/1999/html">
@@ -7,7 +7,7 @@
                 <div class="panel-body">
                    <strong><p style="font-size: 20px">{{$userJob->job_title}}</p></strong>
                     <p>{{$userJob->company}}</p>
-                    <a href="{{URL::to('/applyJob',array('userJob'=>$userJob->id))}}" class="btn btn-success">EAST APPLY</a>
+                    <a href="{{URL::to('/applyJob',array('userJob'=>$userJob->id))}}" class="btn btn-success">Easy Apply</a>
                 </div>
             </div>
 

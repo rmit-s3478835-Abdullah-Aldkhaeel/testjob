@@ -10,160 +10,115 @@
     @endif
     <div class="container-fluid" xmlns="http://www.w3.org/1999/html" style="margin-top: 5px">
         <div class="row">
-            <div class="col-md-10 col-md-push-1" id="layoutAndColor">
+            <div class="col-sm-9 col-sm-push-1" id="layoutAndColor">
                 <form action="matchResult" method="post">
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                <div class="panel panel-default panel-primary">
-                    <div class="panel-heading"   style="height: 350px">
-                       <strong>JobMatching: </strong>
 
-                        <button class="btn btn-success btn-lg" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-left:100px">
-                           Please select the skills >
-                        </button>
+                        <h5>Select your preferences to bring the most relevant job to you! </h5>
 
-                        <button class="btn btn-danger btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1"style="margin-left:100px">
-                            Please select the interests >
-                        </button>
 
-                        <button class="btn btn-warning btn-lg" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3" style="margin-left:100px">
-                            Please select the Experience >
-                        </button>
 
+                        <div class="wrapper">
+                            <button class="btn btn-primary btn-lg" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-left:100px">
+                                Select Skills >&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                            </button>
+                        </div>
                         <div class="collapse" id="collapseExample">
                             <div class="well">
-                        <div class="checkbox" style="color: #0c0c0c">
-                            <label><strong>Skill:</strong></label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="programming" >programming
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="maintaining">maintaining
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="communication">communication
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="management">management
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="reading Newspaper">reading Newspaper
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="integratingCapacity">integratingCapacity
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="marketing capacity">marketing capacity
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="coordination">coordination
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="design">design
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="critical thinking">critical thinking
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="operating capacity">operating capacity
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="debug">debug
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="innovation">innovation
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="playing game">playing game
-                            </label>
-                            <label>
-                                <input type="checkbox" name="skill[]" value="visiting Technical website">visiting Technical website
-                            </label>
-                        </div>
-                            </div>
-                        </div>
-
-                        <div class="collapse" id="collapseExample1"  style="color: #0c0c0c">
-                            <div class="well">
-                                <div class="checkbox">
-                                <label><strong>Interest:</strong></label>
-                                <label>
-                                    <input type="checkbox" name="interests[]" value="reading Newspaper" >reading Newspaper
-                                </label>
-                                <label>
-                                    <input type="checkbox" name="interests[]" value="meditation">meditation
-                                </label>
-                                <label>
-                                    <input type="checkbox" name="interests[]" value="critical thinking">critical thinking
-                                </label>
-                                <label>
-                                    <input type="checkbox" name="interests[]" value="programming contest">programming contest
-                                </label>
-                                <label>
-                                    <input type="checkbox" name="interests[]" value="playing game">playing game
-                                </label>
+                                <div class="checkbox" style="color: #0c0c0c">
+                                    <label><strong>Skill:</strong></label>
                                     <label>
-                                        <input type="checkbox" name="interests[]" value="reading blogs">reading blogs
+                                        <input type="checkbox" name="skill[]" value="programming" >Programming
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="interests[]" value="fitness">fitness
+                                        <input type="checkbox" name="skill[]" value="communication">Communication
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="interests[]" value="reading microblog">reading microblog
+                                        <input type="checkbox" name="skill[]" value="management">Management
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="interests[]" value="hunting">hunting
+                                        <input type="checkbox" name="skill[]" value="coordination">Coordination
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="interests[]" value="backetball">backetball
+                                        <input type="checkbox" name="skill[]" value="design">Design
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="interests[]" value="debug">debug
+                                        <input type="checkbox" name="skill[]" value="critical thinking">Critical Thinking
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="interests[]" value="visiting Technical website">visiting Technical website
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="interests[]" value="programming contest">programming contest
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="interests[]" value="management">management
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="interests[]" value="exercise">exercise
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="interests[]" value="cooking">cooking
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="interests[]" value="independent learning">independent learning
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="interests[]" value="design">design
+                                        <input type="checkbox" name="skill[]" value="innovation">Innovation
                                     </label>
                                 </div>
                             </div>
                         </div>
+                        <div class="wrapper">
+                            <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1"style="margin-left:100px">
+                                Select Interests >&nbsp; &nbsp;&nbsp;
+                            </button>
+                        </div>
+                        <div class="collapse" id="collapseExample1"  style="color: #0c0c0c">
+                            <div class="well">
+                                <div class="checkbox">
+                                    <label><strong>Interest:</strong></label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="meditation">Meditation
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="programming contest">Programming Contest
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="reading blogs">Reading
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="fitness">Fitness
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="management">Management
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="exercise">Exercise
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="cooking">Cooking
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="interests[]" value="independent learning">Independent Learning
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wrapper">
+                            <button class="btn btn-primary btn-lg" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3" style="margin-left:100px">
+                                Select Experience >
+                            </button>
+                        </div>
                         <div class="collapse" id="collapseExample3"  style="color: #0c0c0c">
                             <div class="well">
-                        <select class="form-control" name="experience">
-                            <option  value="zero">--0 year--</option>
-                            <option  value="1year">--1 year--</option>
-                            <option  value="2year">--2 years--</option>
-                            <option  value="3year">--3 years--</option>
-                            <option  value="more">--more than 3 years--</option>
-                        </select>
-                    </div>
+                                <select class="form-control" name="experience">
+                                    <option  value="zero">--0 year--</option>
+                                    <option  value="1year">--1 year--</option>
+                                    <option  value="2year">--2 years--</option>
+                                    <option  value="3year">--3 years--</option>
+                                    <option  value="more">--more than 3 years--</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                    <button  type="submit" class="btn btn-default form-control" style="height: 40px">
-                        <p style="font-size: 20px">
-                            MatchJob
-                        </p>
-                    </button>
-                </div>
 
-                </form>
             </div>
         </div>
+    <br>
+    <div class="wrapper">
+    <button  type="submit" class="btn btn-success" style="height: 40px">
+        <p style="font-size: 20px">
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Match &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        </p>
+    </button>
+    </div>
+        </form>
+        <br>
+
+    </div>
+    </div>
     </div>
 @endsection

@@ -14,9 +14,16 @@
 
 
                 <div class="panel-bodyLanding">
-                    <a href="{{ url('/login') }}" class="button">Log In</a><br>
-                    <a href="{{ url('/register') }}" class="button">Register as Job Seejer</a>
-                    <a href="{{ url('/register') }}" class="button">Register as Employer</a>
+                    <a href="{{URL::to('/login')}}" class="btn btn-primary form-control" style="margin-top: 10px;height: 40px">
+                        <p style="font-size: 20px">
+                            Login
+                        </p>
+                    </a>
+                    <a href="{{URL::to('/register')}}" class="btn btn-primary form-control" style="margin-top: 10px;height: 40px">
+                        <p style="font-size: 20px">
+                            Register
+                        </p>
+                    </a>
 
                 </div>
             </div>

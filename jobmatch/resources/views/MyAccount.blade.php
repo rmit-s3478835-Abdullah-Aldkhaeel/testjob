@@ -31,13 +31,13 @@
                 </form>
                 <a href="{{URL::to('/resume')}}" class="btn btn-danger form-control" style="margin-top: 10px;height: 40px">
                     <p style="font-size: 20px">
-                    View your application from CategorySearch
+                        View jobs you've applied from search
                     </p>
                 </a>
 
                 <a href="{{URL::to('/resume2')}}" class="btn btn-success form-control" style="margin-top: 10px;height: 40px">
                     <p style="font-size: 20px">
-                        View your application from jobMatching
+                        View jobs you've applied from matching
                     </p>
                 </a>
                 <br><br>

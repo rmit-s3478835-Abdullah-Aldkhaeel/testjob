@@ -11,7 +11,7 @@
                 <form  class="searchBox" action="search" method="post" style="text-align: center;">
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
-                        <select name="job">
+                        <select name="job" class="form-control">
                             <option  value="Computing">Computing</option>
                             <option  value="Art">Art</option>
                             <option  value="Sales">Sales</option>

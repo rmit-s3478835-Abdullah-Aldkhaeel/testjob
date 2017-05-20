@@ -6,16 +6,8 @@
                 @if($info)
                 <div class="panel panel-danger">
                     <div class="panel-heading"><p class="text-center"><strong>{{$info}}</strong> </p></div>
-                    <div class="panel-body">
-                        <strong>Please fellow the these steps:</strong><br/>
-                        <ul>
-                            <li><strong>enter the jobSearching page</strong></li>
-                            <li><strong>select the job categories</strong></li>
-                            <li> <strong>find the jobs you are interested in</strong></li>
-                            <li> <strong>apply the jobs</strong></li>
-                        </ul>
-                        <a href="{{URL('/myAccount')}}" class="btn btn-success form-control">return back</a>
-                    </div>
+
+                        <a href="{{URL('/myAccount')}}" class="btn btn-success form-control">Return back</a>
                 </div>
                     @endif
 
