@@ -1,7 +1,7 @@
 @extends('layouts.beforeContentPage')
 @section('content')
     @if(!empty(session('success')))
-        <div class=" alert alert-danger col-md-8 col-md-push-1">
+        <div class=" alert alert-success col-md-8 col-md-push-1">
             <a href="#" class="close" data-dismiss="alert">
                 &times;
             </a>
@@ -9,7 +9,7 @@
         </div>
     @endif
     @if(!empty(session('fail')))
-        <div class=" alert alert-danger col-md-8 col-md-push-1">
+        <div class=" alert alert-warning col-md-8 col-md-push-1">
             <a href="#" class="close" data-dismiss="alert">
                 &times;
             </a>

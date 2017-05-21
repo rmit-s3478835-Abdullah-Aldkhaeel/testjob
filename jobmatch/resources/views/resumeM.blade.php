@@ -1,10 +1,9 @@
-@extends('layouts.displayDes')
+@extends('layouts.beforeContentPage')
 @section('content')
-    <div class="container-fluid" xmlns="http://www.w3.org/1999/html" style="margin-top: 5px">
+    <div class="container-fluid" xmlns="http://www.w3.org/1999/html" style="margin-top: 80px">
         <div class="row">
-            <div class="col-md-4 col-md-push-1" id="layoutAndColor" style="margin-top: 100px">
                 @if($resumeMs)
-                    <div class="container" style="margin-top: 80px">
+                    <div class="container" style="margin-top: 20px">
                         <div class="starter-template" style="background-color: white">
 
                             <table class="table table-striped">

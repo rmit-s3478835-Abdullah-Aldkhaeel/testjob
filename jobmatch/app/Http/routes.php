@@ -137,10 +137,10 @@ Route::get('/applyJob/{number}',function($number){
                if(!$resume){
                    DB::insert('insert into jobresumes(user_id,job_title,description,wage,company) values(?,?,?,?,?)',
                    [$user_id,$jobUser->job_title,$jobUser->description,$jobUser->wage,$jobUser->company]);
-                   return redirect('/displayMatch')->with('success','Your have successfully apply a job');
+                   return redirect('/displayMatch')->with('success','You have successfully applied for this job');
                }else{
 
-                   return redirect('/displayMatch')->with('fail','Your have already applied this job');
+                   return redirect('/displayMatch')->with('fail','You have already applied for this job');
                }
            }
            
@@ -163,9 +163,9 @@ Route::get('/applyJobC/{number}',function($number){
 
                 DB::insert('insert into jobresumeCs(user_id,job_name,job_company,job_des,company_des,jobcategory_id) values(?,?,?,?,?,?)',
                     [$user_id,$joblist->job_name,$joblist->job_company,$joblist->job_des,$joblist->company_des,$joblist->jobcategory_id]);
-                return back()->with('success1','You have successfully apply this job');
+                return back()->with('success1','You have successfully applied for this job');
             }else{}
-            return back()->with('fail1','You have already applied this job');
+            return back()->with('fail1','You have already applied for this job');
 
         }
     }
