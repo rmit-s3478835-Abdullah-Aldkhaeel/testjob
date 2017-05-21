@@ -22,12 +22,17 @@ class TestLoginPage extends TestCase
     //valid email and password
     public function test_login1()
     {
+        $user = factory(App\User::class)->create([
+            'password' => bcrypt('testpass123')
+        ]);
         $this->visit('login')
-            ->type('testlogin@gmail.com', 'email')
-            ->type('123456','password')
+            ->type($user->email, 'email')
+            ->type('testpass123','password')
             ->press('Login')
             ->seePageIs('/myAccount')
-            ->see('My Account');
+            ->see('Edit Profile');
+        $user1 = DB::table('users')->where('email', $user->email);
+        $user1->delete();
     }
     //invalid email with valid password
     public function test_login2()
