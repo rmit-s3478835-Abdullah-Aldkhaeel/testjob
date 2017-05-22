@@ -39,23 +39,25 @@ class afterSignIn extends Controller
 
     public function searchResult( Request $request){
 
-        $jobcategory=new Jobcategory();
+            $jobcategory = new Jobcategory();
 
-        $allcategories=$jobcategory->getall();
+            $allcategories = $jobcategory->getall();
 
-        $choice=$request->input('job');
+            $choice = $request->input('job');
 
-        foreach($allcategories  as $category){
+            session(['job' => $choice]);
 
-            if($category->category_name==$choice){
+            foreach ($allcategories as $category) {
 
-                $jobs=$jobcategory->getjobs($category->id);
+                if ($category->category_name == $choice) {
 
-                    return view('displayPage',compact('jobs'));
-                
+                    $jobs = $jobcategory->getjobs($category->id);
+
+                    return view('displayPage', compact('jobs'));
+
                 }
 
-        }
+            }
 }
     public function EditProfile(Request $request)
         {
@@ -119,8 +121,30 @@ class afterSignIn extends Controller
 
             return view('resumeM',compact('resumeMs'));
         }
+    }
+
+
+    public function searchA(){
+        $jobcategory = new Jobcategory();
+
+        $allcategories = $jobcategory->getall();
+
+        $choice=session('job');
+
+        foreach ($allcategories as $category) {
+
+            if ($category->category_name == $choice) {
+
+                $jobs = $jobcategory->getjobs($category->id);
+
+                return view('displayPage', compact('jobs'));
+
+            }
+
+        }
 
 
     }
+    
 
 }

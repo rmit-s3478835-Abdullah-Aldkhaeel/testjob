@@ -1,5 +1,22 @@
 @extends('layouts.displayPage')
 @section('content')
+    @if(!empty(session('success1')))
+        <div class=" alert alert-success col-md-8 col-md-push-1">
+            <a href="#" class="close" data-dismiss="alert">
+                &times;
+            </a>
+            <strong> {{session('success1')}}</strong>
+        </div>
+    @endif
+    @if(!empty(session('fail1')))
+        <div class=" alert alert-warning col-md-8 col-md-push-1">
+            <a href="#" class="close" data-dismiss="alert">
+                &times;
+            </a>
+            <strong> {{session('fail1')}}</strong>
+        </div>
+    @endif
+
 
     <div class="container" style="margin-top: 80px">
         <div class="starter-template" style="background-color: white">

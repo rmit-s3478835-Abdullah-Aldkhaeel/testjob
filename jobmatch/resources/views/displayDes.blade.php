@@ -1,24 +1,5 @@
 @extends('layouts.beforeContentPage')
 @section('content')
-
-    @if(!empty(session('success1')))
-        <div class=" alert alert-danger col-md-8 col-md-push-1">
-            <a href="#" class="close" data-dismiss="alert">
-                &times;
-            </a>
-            <strong> {{session('success1')}}</strong>
-        </div>
-    @endif
-    @if(!empty(session('fail1')))
-        <div class=" alert alert-danger col-md-8 col-md-push-1">
-            <a href="#" class="close" data-dismiss="alert">
-                &times;
-            </a>
-            <strong> {{session('fail1')}}</strong>
-        </div>
-    @endif
-
-
     <div class="container" style="margin-top: 100px" xmlns="http://www.w3.org/1999/html">
         <div class="col-md-8">
             <div class="panel panel-default">

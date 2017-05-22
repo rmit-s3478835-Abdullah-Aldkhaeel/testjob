@@ -81,14 +81,46 @@ Route::post('editProfile','afterSignIn@EditProfile');
 Route::get('/matchJob','match@matchJob');
 Route::get('/resume','afterSignIn@Resume');
 Route::get('/resume2','afterSignIn@Resume2');
+Route::get('/delete/{number}',function($number){
+
+    $user=AUTH::user();
+    $user_id=$user->id;
+    $delete=DB::delete('delete from jobresumes where user_id=? and id=?',
+        [$user_id,$number]);
+    if(!$delete){
+        return redirect('/resume2')->with('deleteF','The record can not be deleted');
+
+    }else{
+
+        return redirect('/resume2')->with('deleteS','The record has be deleted successully');
+
+    }
+    
+});
+
+Route::get('/delete1/{number}',function($number){
+
+    $user=AUTH::user();
+    $user_id=$user->id;
+    $delete=DB::delete('delete from jobresumeCs where user_id=? and id=?',
+        [$user_id,$number]);
+    if(!$delete){
+        return redirect('/resume')->with('deleteF1','The record can not be deleted');
+
+    }else{
+
+        return redirect('/resume')->with('deleteS1','The record has be deleted successully');
+    }
+
+});
 Route::get('/displayJob','displayPage@displayJob');
 
 Route::get('session/get','SessionController@accessSessionData');
 Route::get('session/set','SessionController@storeSessionData');
 Route::get('session/remove','SessionController@deleteSessionData');
-Route::post('matchResult','match@matchResult');
+Route::any('matchResult','match@matchResult');
 Route::get('/displayMatch','match@displayMatch');
-
+Route::get('/searchA','afterSignIn@searchA');
 Route::get('/details/{number}',function($number){
 
     $userJobs=DB::select('select * from jobUsers');
@@ -163,9 +195,9 @@ Route::get('/applyJobC/{number}',function($number){
 
                 DB::insert('insert into jobresumeCs(user_id,job_name,job_company,job_des,company_des,jobcategory_id) values(?,?,?,?,?,?)',
                     [$user_id,$joblist->job_name,$joblist->job_company,$joblist->job_des,$joblist->company_des,$joblist->jobcategory_id]);
-                return back()->with('success1','You have successfully applied for this job');
+                return redirect('/searchA')->with('success1','You have successfully applied for this job');
             }else{}
-            return back()->with('fail1','You have already applied for this job');
+            return redirect('/searchA')->with('fail1','You have already applied for this job');
 
         }
     }
