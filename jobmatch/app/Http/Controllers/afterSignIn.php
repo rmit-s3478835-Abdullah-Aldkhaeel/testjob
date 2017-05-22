@@ -71,7 +71,7 @@ class afterSignIn extends Controller
 
             $validator = Validator::make($request->all(), [
                     'pwd' => 'required|max:255',
-                    'email' => 'required|unique:users',array('regex:/\w{6,16}@\w{1,}\.\w{2,3}/i')
+                    'email' => 'required',array('regex:/\w{6,16}@\w{1,}\.\w{2,3}/i')
                 ]
             );
             if ($validator->fails()) {
