@@ -15,15 +15,15 @@
                         <div class="starter-template" style="background-color: white">
                             <table class="table table-striped">
                                 <tr >
-                                    <th>JobName</th>
+                                    <th>Job Title</th>
                                     <th>Company</th>
-                                    <th>JobDes</th>
+                                    <th>Job Description</th>
                                 </tr>
                                 @foreach($resumeMs as $resumeMs)
                                     <tr >
                                         <td style="width: 200px">
                                             <p><strong>{{$resumeMs->job_title}}</strong></p>
-                                            <a href="{{URL::to('/delete',array('$id'=>$resumeMs->id))}}" class="btn btn-primary">Delete This Apply</a>
+                                            <a href="{{URL::to('/delete',array('$id'=>$resumeMs->id))}}" class="btn btn-primary">Cancel This Application</a>
                                         </td>
                                         <td>{{$resumeMs->company}}</td>
                                         <td>{{$resumeMs->description}}</td>

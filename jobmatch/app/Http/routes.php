@@ -80,11 +80,11 @@ Route::get('/delete/{number}',function($number){
     $delete=DB::delete('delete from jobresumes where user_id=? and id=?',
         [$user_id,$number]);
     if(!$delete){
-        return redirect('/resume2')->with('deleteF','The record can not be deleted');
+        return redirect('/resume2')->with('deleteF','The application can not be cancelled');
 
     }else{
 
-        return redirect('/resume2')->with('deleteS','The record has be deleted successully');
+        return redirect('/resume2')->with('deleteS','The application has been cancelled successfully');
 
     }
     
@@ -97,11 +97,11 @@ Route::get('/delete1/{number}',function($number){
     $delete=DB::delete('delete from jobresumeCs where user_id=? and id=?',
         [$user_id,$number]);
     if(!$delete){
-        return redirect('/resume')->with('deleteF1','The record can not be deleted');
+        return redirect('/resume')->with('deleteF1','The application can not be cancelled');
 
     }else{
 
-        return redirect('/resume')->with('deleteS1','The record has be deleted successully');
+        return redirect('/resume')->with('deleteS1','The application has been cancelled successfully');
     }
 
 });

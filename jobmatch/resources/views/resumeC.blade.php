@@ -8,25 +8,24 @@
             <strong> {{session('deleteS1')}}</strong>
         </div>
     @endif
-    <div class="container-fluid" xmlns="http://www.w3.org/1999/html" style="margin-top: 100px">
+    <div class="container-fluid" xmlns="http://www.w3.org/1999/html" style="margin-top: 80px">
         <div class="row">
-            <div class="col-md-4 col-md-push-1" id="layoutAndColor" style="margin-top: 5px">
                 @if($resumeCs)
-                    <div class="container" style="margin-top: 80px">
+                    <div class="container" style="margin-top: 20px">
                         <div class="starter-template" style="background-color: white">
 
                     <table class="table table-striped">
                         <tr >
-                            <th>JobName</th>
+                            <th>Job Title</th>
                             <th>Company</th>
-                            <th>JobDes</th>
-                            <th>company_des</th>
+                            <th>Job Description</th>
+                            <th>Company Description</th>
                         </tr>
                         @foreach($resumeCs as $resumeC)
                             <tr >
                                 <td style="width: 200px">
                                     <p><strong>{{$resumeC->job_name}}</strong></p>
-                                    <a href="{{URL::to('/delete1',array('$id'=>$resumeC->id))}}" class="btn btn-primary">Delete This Apply</a>
+                                    <a href="{{URL::to('/delete1',array('$id'=>$resumeC->id))}}" class="btn btn-primary">Cancel This Application</a>
                                 </td>
                                 <td>{{$resumeC->job_company}}</td>
                                 <td>{{$resumeC->job_des}}</td>
