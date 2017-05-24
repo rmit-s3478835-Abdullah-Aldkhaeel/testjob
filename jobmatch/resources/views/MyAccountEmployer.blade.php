@@ -10,8 +10,7 @@
                 <form action="createJob" method="post">
                     <table>
                         <tr>
-                            <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                            <td>Job Title : </td>
+                            <input type="hidden" name="_token" value="{{csrf_token()}}"/>                            <td>Job Title : </td>
                             <td><input type="text" name="job_name"></td>
                         </tr>
                         <tr>
@@ -32,10 +31,15 @@
                         </tr>
                         <tr>
                             <td>Job Category : </td>
-                            <td><input type="text" name="jobcategory_id"></td>
+                            <td><input type="radio" name="jobcategory_id" value="Art" checked> Art
+
+                                <input type="radio" name="jobcategory_id" value="Computing" > Computing
+                                <input type="radio" name="jobcategory_id" value="Sales" > Sales
+                                <input type="radio" name="jobcategory_id" value="Real Estate" > Real Estate</td>
+
                         </tr>
                         <tr>
-                                <td><input type="submit" name=submit" value="Create"></td>
+                            <td><input class="btn btn-success form-control" type="submit" name="submit" value="Create"></td>
                         </tr>
                     </table>
                 </form>

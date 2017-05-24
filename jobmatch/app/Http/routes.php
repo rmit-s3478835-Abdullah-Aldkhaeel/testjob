@@ -25,10 +25,7 @@ Route::get('/about', function () {
 });
 
 Route::auth();
-Route::any('/myAccountEmployer', function (){
-    return view ('myAccountEmployer');
-});
-Route::post('createJob','Controller@createJob');
+Route::post('/createJob','Controller@createJob');
 Route::get('/home', 'HomeController@index');
 
 Route::get('/job/{id}', ['as'=>'home.job', 'uses'=>'AdminJobsController@job']);
@@ -60,9 +57,17 @@ Route::group(['middleware'=>'admin'], function(){
 /*Route::get('/');*/
 Route::get('/search','afterSignIn@search');
 Route::get('/myAccount',function(){
+    if ( Auth::user()->category_id ==3) {
+        $user = AUTH::user();
+        return view('MyAccount', compact('user'));
+    }
 
-    $user=AUTH::user();
-    return view('MyAccount',compact('user'));
+});
+Route::any('/myAccountEmployer',function(){
+    if ( Auth::user()->category_id ==2) {
+
+        return view('MyAccountEmployer');
+    }
 
 });
 Route::get('/changeProfile','afterSignIn@changeProfile');
@@ -87,7 +92,7 @@ Route::get('/delete/{number}',function($number){
         return redirect('/resume2')->with('deleteS','The application has been cancelled successfully');
 
     }
-    
+
 });
 
 Route::get('/delete1/{number}',function($number){
@@ -118,9 +123,9 @@ Route::get('/details/{number}',function($number){
     $userJobs=DB::select('select * from jobUsers');
 
     foreach ($userJobs as $userJob){
-            if($userJob->id==$number){
-                return view('displayMatchDes',compact('userJob'));
-            }
+        if($userJob->id==$number){
+            return view('displayMatchDes',compact('userJob'));
+        }
     }
 });
 
@@ -133,9 +138,9 @@ Route::get('/displayApply','displayPage@displayApply');
 
 
 Route::get('/displayDes/{number}',function($number) {
-    
+
     $jobs=new Joblist();
-    
+
     $all=$jobs->getall();
 
     foreach ($all as $job){
@@ -151,36 +156,36 @@ Route::get('/displayDes/{number}',function($number) {
 });
 
 Route::get('/applyJob/{number}',function($number){
-       $jobUsers= DB::select('select * from jobUsers');
-        $user= AUTH::user();
-        $user_id=$user->id;
-       foreach ($jobUsers as $jobUser){
-           if($number==$jobUser->id){
-               $resume=DB::select('select * from jobresumes where user_id=? and job_title=? and description=? and wage=? and company=?',
-                   [$user_id,$jobUser->job_title,$jobUser->description,$jobUser->wage,$jobUser->company]);
-               if(!$resume){
-                   DB::insert('insert into jobresumes(user_id,job_title,description,wage,company) values(?,?,?,?,?)',
-                   [$user_id,$jobUser->job_title,$jobUser->description,$jobUser->wage,$jobUser->company]);
-                   return redirect('/displayMatch')->with('success','You have successfully applied for this job');
-               }else{
+    $jobUsers= DB::select('select * from jobUsers');
+    $user= AUTH::user();
+    $user_id=$user->id;
+    foreach ($jobUsers as $jobUser){
+        if($number==$jobUser->id){
+            $resume=DB::select('select * from jobresumes where user_id=? and job_title=? and description=? and wage=? and company=?',
+                [$user_id,$jobUser->job_title,$jobUser->description,$jobUser->wage,$jobUser->company]);
+            if(!$resume){
+                DB::insert('insert into jobresumes(user_id,job_title,description,wage,company) values(?,?,?,?,?)',
+                    [$user_id,$jobUser->job_title,$jobUser->description,$jobUser->wage,$jobUser->company]);
+                return redirect('/displayMatch')->with('success','You have successfully applied for this job');
+            }else{
 
-                   return redirect('/displayMatch')->with('fail','You have already applied for this job');
-               }
-           }
-           
-       }
+                return redirect('/displayMatch')->with('fail','You have already applied for this job');
+            }
+        }
+
+    }
 });
 
 Route::get('/applyJobC/{number}',function($number){
 
     $user=AUTH::user();
     $user_id=$user->id;
-    
+
     $joblists=DB::select('select * from joblists');
-    
+
     foreach ($joblists as $joblist){
         if($joblist->id==$number){
-            
+
             $resuemC=DB::select('select * from jobresumeCs where user_id=? and job_name=? and job_company=? and job_des=? and company_des=? and jobcategory_id=?',
                 [$user_id,$joblist->job_name,$joblist->job_company,$joblist->job_des,$joblist->company_des,$joblist->jobcategory_id]);
             if(!$resuemC){

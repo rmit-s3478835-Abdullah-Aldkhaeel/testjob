@@ -20,7 +20,7 @@ class afterSignIn extends Controller
 {
     public function search(){
 
-    return view('search');
+        return view('search');
 
     }
 
@@ -31,6 +31,11 @@ class afterSignIn extends Controller
 
         return view('MyAccount');
     }
+    public function myAccountEmployer()
+    {
+
+        return view('MyAccountEmployer');
+    }
 
     public function contact(){
 
@@ -39,72 +44,72 @@ class afterSignIn extends Controller
 
     public function searchResult( Request $request){
 
-            $jobcategory = new Jobcategory();
+        $jobcategory = new Jobcategory();
 
-            $allcategories = $jobcategory->getall();
+        $allcategories = $jobcategory->getall();
 
-            $choice = $request->input('job');
+        $choice = $request->input('job');
 
-            session(['job' => $choice]);
+        session(['job' => $choice]);
 
-            foreach ($allcategories as $category) {
+        foreach ($allcategories as $category) {
 
-                if ($category->category_name == $choice) {
+            if ($category->category_name == $choice) {
 
-                    $jobs = $jobcategory->getjobs($category->id);
+                $jobs = $jobcategory->getjobs($category->id);
 
-                    return view('displayPage', compact('jobs'));
-
-                }
+                return view('displayPage', compact('jobs'));
 
             }
-}
-    public function EditProfile(Request $request)
-        {
-            $success = "successfull change your personal profile";
-            $pwdR = $request->input('pwd');
-            $emailR = $request->input('email');
 
-            $userInf = AUTH::user();
-            $userId = $userInf->id;
-            $num = DB::update('UPDATE users SET email= ?,password= ? WHERE id= ?', array($emailR, $pwdR, $userId));
-
-            $validator = Validator::make($request->all(), [
-                    'name' => 'required|max:255',
-                    'email' => 'required',array('regex:/\w{6,16}@\w{1,}\.\w{2,3}/i')
-                ]
-            );
-            if ($validator->fails()) {
-
-                return redirect('/myAccount')->withErrors($validator);
-            }
-
-            if ($num) {
-
-                return redirect('/changeProfile');
-
-            }
         }
+    }
+    public function EditProfile(Request $request)
+    {
+        $success = "successfull change your personal profile";
+        $pwdR = $request->input('pwd');
+        $emailR = $request->input('email');
+
+        $userInf = AUTH::user();
+        $userId = $userInf->id;
+        $num = DB::update('UPDATE users SET email= ?,password= ? WHERE id= ?', array($emailR, $pwdR, $userId));
+
+        $validator = Validator::make($request->all(), [
+                'name' => 'required|max:255',
+                'email' => 'required',array('regex:/\w{6,16}@\w{1,}\.\w{2,3}/i')
+            ]
+        );
+        if ($validator->fails()) {
+
+            return redirect('/myAccount')->withErrors($validator);
+        }
+
+        if ($num) {
+
+            return redirect('/changeProfile');
+
+        }
+    }
     public function changeProfile(){
 
-       $user=AUTH::user();
+        $user=AUTH::user();
 
-       return view('afterChangeProfile',compact('user'));
+        return view('afterChangeProfile',compact('user'));
     }
 
     public function Resume(){
         $user=AUTH::user();
-       $user_id=$user->id;
-          $resumeCs=  DB::select('select * from jobresumeCs where user_id=?',
-       [$user_id]);
+        $user_id=$user->id;
+        $resumeCs=  DB::select('select * from jobresumeCs where user_id=?',
+            [$user_id]);
 
-       if(!$resumeCs){
+        if(!$resumeCs){
             $info="You haven't applied for any job from Search page";
             return view('resumeCE',compact('info'));
         }else{
 
             return view('resumeC',compact('resumeCs'));
-       }
+        }
 
 
     }
@@ -145,6 +150,6 @@ class afterSignIn extends Controller
 
 
     }
-    
+
 
 }

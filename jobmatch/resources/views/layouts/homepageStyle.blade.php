@@ -41,7 +41,12 @@
             color:white;
 
         }
+         h2{
 
+            color: #292929;
+            text-align: center;
+            text-shadow: 1px 2px #939593;
+        }
         .btn-primary {
             color: #fff;
             background-color: #0495c9;
@@ -90,7 +95,20 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
-                    @else
+                    @elseif (Auth::user()->category_id ==2)
+                        <li><a href="{{ url('/myAccountEmployer') }}">My Account</a>
+                        <li><a href="{{ url('/search') }}">Search</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
+
+                        </li>
+                    @elseif ( Auth::user()->category_id ==3)
                         <li><a href="{{ url('/myAccount') }}">My Account</a>
                         <li><a href="{{ url('/matchJob') }}">Job Matching</a></li>
                         <li><a href="{{ url('/search') }}">Search</a></li>
@@ -104,6 +122,21 @@
                             </ul>
 
                         </li>
+                        @else
+                            <li><a href="{{ url('/myAccount') }}">My Account</a>
+                            <li><a href="{{ url('/matchJob') }}">Job Matching</a></li>
+                            <li><a href="{{ url('/search') }}">Search</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                </ul>
+
+                            </li>
+
                     @endif
             </div>
         </div>
