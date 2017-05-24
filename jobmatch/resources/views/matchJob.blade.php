@@ -16,37 +16,36 @@
 
                         <h5>Select your preferences to bring the most relevant job to you! </h5>
 
-
-
                         <div class="wrapper">
                             <button class="btn btn-primary btn-lg" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-left:100px">
                                 Select Skills >&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                             </button>
                         </div>
+
                         <div class="collapse" id="collapseExample">
                             <div class="well">
                                 <div class="checkbox" style="color: #0c0c0c">
                                     <label><strong>Skill:</strong></label>
                                     <label>
-                                        <input type="checkbox" name="skill[]" value="programming" >Programming
+                                        <input id="select" type="checkbox" name="skill[]" value="programming" >Programming
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="skill[]" value="communication">Communication
+                                        <input id="select1" type="checkbox" name="skill[]" value="communication">Communication
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="skill[]" value="management">Management
+                                        <input id="select2" type="checkbox" name="skill[]" value="management">Management
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="skill[]" value="coordination">Coordination
+                                        <input id="select3" type="checkbox" name="skill[]" value="coordination">Coordination
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="skill[]" value="design">Design
+                                        <input id="select4" type="checkbox" name="skill[]" value="design">Design
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="skill[]" value="critical thinking">Critical Thinking
+                                        <input id="select5" type="checkbox" name="skill[]" value="critical thinking">Critical Thinking
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="skill[]" value="innovation">Innovation
+                                        <input id="select6"  type="checkbox" name="skill[]" value="innovation">Innovation
                                     </label>
                                 </div>
                             </div>
@@ -61,13 +60,13 @@
                                 <div class="checkbox">
                                     <label><strong>Interest:</strong></label>
                                     <label>
-                                        <input type="checkbox" name="interests[]" value="meditation">Meditation
+                                        <input type="checkbox" name="interests[]" value="meditation" >Meditation
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="interests[]" value="programming contest">Programming Contest
+                                        <input type="checkbox" name="interests[]" value="programming contest" >Programming Contest
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="interests[]" value="reading blogs">Reading
+                                        <input type="checkbox" name="interests[]" value="reading blogs" >Reading
                                     </label>
                                     <label>
                                         <input type="checkbox" name="interests[]" value="fitness">Fitness
@@ -104,7 +103,6 @@
                             </div>
                         </div>
                     </div>
-
             </div>
         </div>
     <br>

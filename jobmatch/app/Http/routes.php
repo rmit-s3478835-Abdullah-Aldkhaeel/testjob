@@ -19,18 +19,16 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@home');
 Route::get('/about', function () {
     return view('about');
 });
 
 Route::auth();
-Route::get('/myAccountEmployer', function (){
+Route::any('/myAccountEmployer', function (){
     return view ('myAccountEmployer');
 });
-Route::any('/createJob','Controller@createJob');
+Route::post('createJob','Controller@createJob');
 Route::get('/home', 'HomeController@index');
 
 Route::get('/job/{id}', ['as'=>'home.job', 'uses'=>'AdminJobsController@job']);
@@ -64,13 +62,7 @@ Route::get('/search','afterSignIn@search');
 Route::get('/myAccount',function(){
 
     $user=AUTH::user();
-    $userPass=$user->password;
-    $userEm=$user->email;
-    $userInfo=[
-       'userP'=> $userPass,
-        'usere'=>$userEm
-    ];
-    return view('MyAccount',compact('userInfo'));
+    return view('MyAccount',compact('user'));
 
 });
 Route::get('/changeProfile','afterSignIn@changeProfile');

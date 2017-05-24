@@ -15,12 +15,12 @@
                 <form action="editProfile" method="post">
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="input-group" id="layoutAndColor">
-                        <span class="input-group-addon" style="color:black">Password</span>
-                        <input type="password"  class="form-control" name="pwd" value=" {{$userInfo['userP']}}"/>
+                        <span class="input-group-addon" style="color:black">Name</span>
+                        <input type="text"  class="form-control" name="name" value=" {{$user->name}}"/>
                     </div>
                     <div class="input-group" id="layoutAndColor">
                         <span class="input-group-addon" style="color:black">Email</span>
-                        <input type="text"  class="form-control" name="email" value=" {{$userInfo['usere']}}"/>
+                        <input type="text"  class="form-control" name="email" value=" {{$user->email}}"/>
                     </div>
                     <button  type="submit" class="btn btn-primary form-control" style="margin-top: 20px;height: 40px">
                         <p style="font-size: 20px">

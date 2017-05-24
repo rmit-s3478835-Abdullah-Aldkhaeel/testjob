@@ -110,7 +110,7 @@ class match extends Controller
 
                 }
         }
-
+        
         return redirect('/displayMatch');
 
 

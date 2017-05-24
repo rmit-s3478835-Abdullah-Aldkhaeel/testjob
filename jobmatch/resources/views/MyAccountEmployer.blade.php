@@ -7,10 +7,10 @@
                 <hr>
                 <p color="black">Create a new job</p>
 
-                <form action="/createJob" method="post">
+                <form action="createJob" method="post">
                     <table>
                         <tr>
-                            {{ csrf_field() }}
+                            <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                             <td>Job Title : </td>
                             <td><input type="text" name="job_name"></td>
                         </tr>

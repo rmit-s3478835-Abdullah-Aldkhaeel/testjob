@@ -18,10 +18,6 @@
                 <span class="input-group-addon" style="color:black">Email</span>
                 <input type="text"  class="form-control" name="email" value="{{$user->email}} "/>
             </div>
-                <div class="input-group" id="layoutAndColor">
-                    <span class="input-group-addon" style="color:black">Password</span>
-                    <input type="password"  class="form-control" name="pwd" value="{{$user->password}}"/>
-                </div>
             <a href="{{URL::to('/search')}}" class="btn btn-danger form-control" style="margin-top: 10px;height: 40px"><strong>Confirm</strong></a>
             <a href="{{URL::to('/myAccount')}}" class="btn btn-primary form-control" style="margin-top: 10px;height: 40px"><strong>Change Again</strong></a>
         </div>

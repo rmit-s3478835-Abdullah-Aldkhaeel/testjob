@@ -70,7 +70,7 @@ class afterSignIn extends Controller
             $num = DB::update('UPDATE users SET email= ?,password= ? WHERE id= ?', array($emailR, $pwdR, $userId));
 
             $validator = Validator::make($request->all(), [
-                    'pwd' => 'required|max:255',
+                    'name' => 'required|max:255',
                     'email' => 'required',array('regex:/\w{6,16}@\w{1,}\.\w{2,3}/i')
                 ]
             );

@@ -5,7 +5,7 @@
     <div class="row">
         <br>
 
-        <h1><div style="text-align: center; color:rgba(0,0,0,0.82); " >Welcome</div></h1>
+        <h1><div style="text-align: center; color:red " >The last matching record</div></h1>
         @if (Auth::guest())
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
@@ -28,6 +28,56 @@
                 </div>
             </div>
         </div>
+        @else
+            @if(!empty($userJobs))
+        <div class="container" style="margin-top: 80px">
+            <div class="starter-template" style="background-color: white">
+        <table class="table table-striped">
+            <tr >
+                <th>user_id</th>
+                <th>JobName</th>
+                <th>Company</th>
+                <th>wage</th>
+            </tr>
+     @foreach($userJobs as $userJob)
+                            <tr >
+                                <th>{{$userJob->user_id}}</th>
+                                <td><a href="{{URL::to('/details',array('userJob'=>$userJob->id))}}">{{$userJob->job_title}}</a></td>
+                                <td>{{$userJob->company}}</td>
+                                <td>{{$userJob->wage}}</td>
+                            </tr>
+         @endforeach
+            </table>
+                <ul class="pagination" style="margin-left: 350px">
+                    <li><a href="#">&laquo;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">10</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+
+                </div>
+            </div>
+                @else
+            <div class="container-fluid" xmlns="http://www.w3.org/1999/html" style="margin-top: 5px">
+                <div class="row">
+                    <div class="col-md-4 col-md-push-4" id="layoutAndColor" style="margin-top: 100px">
+                            <div class="panel panel-danger">
+                                <div class="panel-heading"><p class="text-center"><strong>You haven't matched the jobs before</strong> </p></div>
+
+                                <a href="{{URL('/matchJob')}}" class="btn btn-success form-control">Go to the job matching page</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+                @endif
         @endif
     </div>
 </div>
