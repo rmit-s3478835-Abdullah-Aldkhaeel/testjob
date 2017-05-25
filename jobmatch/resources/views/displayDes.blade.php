@@ -6,7 +6,9 @@
                 <div class="panel-body">
                    <strong><p style="font-size: 20px">{{$job->job_name}}</p></strong>
                     <p>{{$job->job_company}}</p>
+                    @if(Auth::user()->category_id ==3)
                     <a href="{{URL::to('/applyJobC',array('$job'=>$job->id))}}" class="btn btn-success">Easy Apply</a>
+                @endif
                 </div>
             </div>
 
