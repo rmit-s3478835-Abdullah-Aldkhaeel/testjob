@@ -41,9 +41,10 @@
                         <tr>
                         </tr>
                     </table>
-                </form>
-                            <td><input class="btn btn-success form-control" type="submit" name="submit" value="Create"></td>
+                    <input class="btn btn-success form-control" type="submit" name="submit" value="Create">
 
+                </form>
+                        </div>
                         </div>
                     </div>
                 </div>
