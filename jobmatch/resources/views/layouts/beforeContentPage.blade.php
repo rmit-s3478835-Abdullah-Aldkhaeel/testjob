@@ -55,7 +55,16 @@
             color:white;
 
         }
+        .panel-default{
+            background-color: rgba(255, 255, 255, 0.35);
+            text-align: center;
+        }
+        .panel-heading{
+            text-align: center;
+        }
+        .btn btn-success form-control{
 
+        }
         footer {
             position: absolute;
             left: 0;

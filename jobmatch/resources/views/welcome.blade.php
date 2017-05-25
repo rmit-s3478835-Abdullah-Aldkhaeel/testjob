@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        @elseif (Auth::user()->category_id ==2){
+        @elseif (Auth::user()->category_id ==2)
     <br><br><br><br><br><br><br>
 
 
@@ -48,7 +48,7 @@
         </div>
     </div>
 </div>
-            }
+
         @else
             @if(!empty($userJobs))
         <div class="container" style="margin-top: 80px">

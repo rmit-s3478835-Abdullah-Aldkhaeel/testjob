@@ -5,8 +5,9 @@
             <div class="col-md-4 col-md-push-4" id="layoutAndColor">
                 <h3>My Account - Employer</h3>
                 <hr>
-                <p color="black">Create a new job</p>
-
+                        <div class="panel panel-default">
+                        <div class="panel-heading">Create a new job</div>
+                        <div class="panel-body">
                 <form action="createJob" method="post">
                     <table>
                         <tr>
@@ -14,35 +15,39 @@
                             <td><input type="text" name="job_name"></td>
                         </tr>
                         <tr>
-                            <td>Job Rank : </td>
+                            <td>Job Rank: </td>
                             <td><input type="text" name="job_rank"></td>
                         </tr>
                         <tr>
-                            <td>Job Company : </td>
+                            <td>Company: </td>
                             <td><input type="text" name="job_company"></td>
                         </tr>
                         <tr>
-                            <td>Job Desc : </td>
+                            <td>Job Description: </td>
                             <td><input type="text" name="job_des"></td>
                         </tr>
                         <tr>
-                            <td>Company Des : </td>
+                            <td>Company Description: </td>
                             <td><input type="text" name="company_des"></td>
                         </tr>
                         <tr>
-                            <td>Job Category : </td>
+                            <td>Job Category: </td>
                             <td><input type="radio" name="jobcategory_id" value="Art" checked> Art
-
                                 <input type="radio" name="jobcategory_id" value="Computing" > Computing
                                 <input type="radio" name="jobcategory_id" value="Sales" > Sales
                                 <input type="radio" name="jobcategory_id" value="Real Estate" > Real Estate</td>
 
                         </tr>
                         <tr>
-                            <td><input class="btn btn-success form-control" type="submit" name="submit" value="Create"></td>
                         </tr>
                     </table>
                 </form>
+                            <td><input class="btn btn-success form-control" type="submit" name="submit" value="Create"></td>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
                 <br>
                 <br>
 
