@@ -13,13 +13,13 @@ class AddColumn extends Migration
     public function up()
     {
         //
-        Schema::table('joblist', function($table)
+        Schema::create('joblist', function($table)
         {
 
             $table->integer('category_id');
         });
-        
-        
+
+
     }
 
     /**
