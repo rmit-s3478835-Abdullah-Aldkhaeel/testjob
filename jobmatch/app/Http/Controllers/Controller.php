@@ -25,10 +25,10 @@ class Controller extends BaseController
 
 
         if ($jobcategory_id == 'Art') {
-            $jobcategory_id = $req->input('1','1');
+            $jobcategory_id = $req->input('2','2');
         }
         if ($jobcategory_id == 'Computing') {
-            $jobcategory_id = $req->input('2','2');
+            $jobcategory_id = $req->input('1','1');
         }
         if ($jobcategory_id == 'Sales') {
             $jobcategory_id = $req->input('3','3');

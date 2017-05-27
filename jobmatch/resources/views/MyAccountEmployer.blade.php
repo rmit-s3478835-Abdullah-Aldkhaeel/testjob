@@ -12,7 +12,7 @@
                     <table>
                         <tr>
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>                            <td>Job Title : </td>
-                            <td><input type="text" name="job_name"></td>
+                            <td><input type="text" name="job_name" required></td>
                         </tr>
                         <tr>
                             <td>Job Rank: </td>
@@ -20,22 +20,22 @@
                         </tr>
                         <tr>
                             <td>Company: </td>
-                            <td><input type="text" name="job_company"></td>
+                            <td><input type="text" name="job_company" required></td>
                         </tr>
                         <tr>
                             <td>Job Description: </td>
-                            <td><input type="text" name="job_des"></td>
+                            <td><input type="text" name="job_des" required></td>
                         </tr>
                         <tr>
                             <td>Company Description: </td>
-                            <td><input type="text" name="company_des"></td>
+                            <td><input type="text" name="company_des" required></td>
                         </tr>
                         <tr>
                             <td>Job Category: </td>
-                            <td><input type="radio" name="jobcategory_id" value="Art" checked> Art
-                                <input type="radio" name="jobcategory_id" value="Computing" > Computing
-                                <input type="radio" name="jobcategory_id" value="Sales" > Sales
-                                <input type="radio" name="jobcategory_id" value="Real Estate" > Real Estate</td>
+                            <td><input type="radio" name="jobcategory_id" value="Art" required> Art
+                                <input type="radio" name="jobcategory_id" value="Computing" /> Computing
+                                <input type="radio" name="jobcategory_id" value="Sales" /> Sales
+                                <input type="radio" name="jobcategory_id" value="Real Estate" /> Real Estate</td>
 
                         </tr>
                         <tr>
