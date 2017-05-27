@@ -21,8 +21,13 @@ class CreateJobsTable extends Migration
             $table->string('skill1');
             $table->string('skill2');
             $table->string('skill3');
+            $table->string('skill4');
             $table->integer('experience');
             $table->string('description');
+            $table->string('internest1');
+            $table->string('internest2');
+            $table->string('internest3');
+            $table->string('internest4');
             $table->string('wage');
             $table->timestamps();
 

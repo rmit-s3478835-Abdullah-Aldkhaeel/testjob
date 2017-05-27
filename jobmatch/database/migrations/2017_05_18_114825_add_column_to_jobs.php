@@ -13,17 +13,11 @@ class AddColumnToJobs extends Migration
     public function up()
     {
         Schema::table('jobs',function($table){
-            
-            $table->string('skill4');
-            $table->string('internest1');
-            $table->string('internest2');
-            $table->string('internest3');
-            $table->string('internest4');
-            $table->string('internest5');
-            
+
+
         });
-        
-        
+
+
         
     }
 
