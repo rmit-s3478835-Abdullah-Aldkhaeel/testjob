@@ -16,7 +16,7 @@
                         </tr>
                         <tr>
                             <td>Job Rank: </td>
-                            <td><input type="text" name="job_rank"></td>
+                            <td><input type="number" name="job_rank"></td>
                         </tr>
                         <tr>
                             <td>Company: </td>
