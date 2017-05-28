@@ -20,10 +20,9 @@ class TestJobSearch extends TestCase
             ->press('Login')
             ->seePageIs('/myAccount')
             ->see('Edit Profile')
-            ->click("Job Search")
+            ->click("Search")
             ->press("Search")
-            ->see("SearchResult")
-            ->see("IT technician");
+            ->see("Web Dev");
         $user1 = DB::table('users')->where('email', $user->email);
         $user1->delete();
     }
@@ -38,10 +37,9 @@ class TestJobSearch extends TestCase
             ->press('Login')
             ->seePageIs('/myAccount')
             ->see('Edit Profile')
-            ->click("Job Search")
+            ->click("Search")
             ->select('Art','job')
             ->press("Search")
-            ->see("SearchResult")
             ->see("Design");
         $user1 = DB::table('users')->where('email', $user->email);
         $user1->delete();
@@ -57,11 +55,10 @@ class TestJobSearch extends TestCase
             ->press('Login')
             ->seePageIs('/myAccount')
             ->see('Edit Profile')
-            ->click("Job Search")
+            ->click("Search")
             ->select('Computing','job')
             ->press("Search")
-            ->see("SearchResult")
-            ->see("Web design");
+            ->see("Web Dev");
         $user1 = DB::table('users')->where('email', $user->email);
         $user1->delete();
     }
@@ -76,10 +73,28 @@ class TestJobSearch extends TestCase
             ->press('Login')
             ->seePageIs('/myAccount')
             ->see('Edit Profile')
-            ->click("Job Search")
+            ->click("Search")
             ->select('Sales','job')
             ->press("Search")
-            ->see("SearchResult");
+            ->see("Sales");
+        $user1 = DB::table('users')->where('email', $user->email);
+        $user1->delete();
+    }
+    public function test_job_search5()
+    {
+        $user = factory(App\User::class)->create([
+            'password' => bcrypt('testpass123')
+        ]);
+        $this->visit('login')
+            ->type($user->email, 'email')
+            ->type('testpass123','password')
+            ->press('Login')
+            ->seePageIs('/myAccount')
+            ->see('Edit Profile')
+            ->click("Search")
+            ->select('Real Estate','job')
+            ->press("Search")
+            ->see("Saler");
         $user1 = DB::table('users')->where('email', $user->email);
         $user1->delete();
     }
